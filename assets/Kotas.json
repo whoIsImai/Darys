@@ -18,6 +18,12 @@
         "price" : 20
     },
     {
+        "name" : "Sandwhich",
+        "img" : "./images/Darys/sandwhich.jpg",
+        "description" : "Egg Sandwhich, Vienna, Patty",
+        "price" : 20
+    },
+    {
         "name" : "A3",
         "img" : "",
         "description" : "Atchar, Lettuce, Egg, Cheese, Vienna, Cheese",

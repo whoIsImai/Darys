@@ -48,12 +48,6 @@
         "price" : 15
     },
     {
-        "name" : "Sandwhich",
-        "img" : "./images/Darys/sandwhich.jpg",
-        "description" : "Egg Sandwhich, Vienna, Patty",
-        "price" : 20
-    },
-    {
         "name" : "Steak & Rice",
         "img" : "./images/Darys/Steak and more salad.jpg",
         "description" : "Steak, Rice, Tomotoe Soup, Cawslow",
