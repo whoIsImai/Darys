@@ -21,43 +21,37 @@
         "name" : "Chicken & Pap",
         "img" : "./images/Darys/chicken pap.jpg",
         "description" : "Chicken, Pap, Tomatoes, Cawslow",
-        "price" : 110
+        "price" : 90
     },
     {
         "name" : "Chicken & Rice",
         "img" : "./images/Darys/chicken salad and Rice.jpg",
         "description" : "Chicken, Rice, Cawslow, Tomato Soup",
-        "price" : 110
+        "price" : 90
     },
     {
         "name" : "Chicken & Pap",
         "img" : "./images/Darys/pap chicken nd salad.jpg",
         "description" : "Chicken, Pap, Cawslow, Chakalaka",
-        "price" : 110
+        "price" : 90
     },
     {
         "name" : "Ribs and Salad",
         "img" : "./images/Darys/Ribs and Salad.jpg",
         "description" : "Ribs, Cawslow, Green Salad",
-        "price" : 70
-    },
-    {
-        "name" : "Salad",
-        "img" : "./images/Darys/Salad.jpg",
-        "description" : "Green Salad",
-        "price" : 15
+        "price" : 110
     },
     {
         "name" : "Steak & Rice",
         "img" : "./images/Darys/Steak and more salad.jpg",
         "description" : "Steak, Rice, Tomotoe Soup, Cawslow",
-        "price" : 110
+        "price" : 90
     },
     {
         "name" : "Steak & Pap",
         "img" : "./images/Darys/Steak pap.jpg",
         "description" : "Steak, Pap, Tomatoes, Cawslow",
-        "price" : 110
+        "price" : 90
     },
     {
         "name" : "Steak and Vors",
@@ -93,6 +87,12 @@
         "name" : "Chicken Wings",
         "img" : "./images/Darys/Wings.jpg",
         "description" : "Grilled chicken wings",
+        "price" : 50
+    },
+    {
+        "name" : "Fish & Chips",
+        "img" : "",
+        "description" : "Fish, Chips",
         "price" : 50
     }
 ]
