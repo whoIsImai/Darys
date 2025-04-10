@@ -1,6 +1,7 @@
-import {View, Text} from 'react-native';
+import {View, Text} from 'react-native'
 
-export default function order(){
+
+export default function profile(){
 
     return(<View
         style={{
@@ -8,7 +9,6 @@ export default function order(){
             justifyContent: "center",
             alignItems: "center",
           }}>
-            <Text>This will Show the orders</Text>
-
+    <Text>This will Show the user profile</Text>
     </View>)
 }

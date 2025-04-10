@@ -1,43 +1,42 @@
 import { Tabs } from "expo-router";
-import {Ionicons} from "@expo/vector-icons";
+import {Ionicons} from '@expo/vector-icons'
 
-
-export default function TabLayout() {
+export default function TabsLayout() {
   return(
     <Tabs>
-      <Tabs.Screen 
-      name="Index" 
+      <Tabs.Screen name="index" 
       options={{
-        headerTitle: "Foods",
-        tabBarIcon: ({color}) => <Ionicons name="fast-food" size={24} color={color} />,
-        tabBarLabel: "Food",
-        tabBarActiveTintColor: "blue",
+        title: "Meals",
+        tabBarLabel: "Meals",
+        tabBarIcon: ({ color }) => (
+          <Ionicons name="fast-food" size={24} color={color} />
+        ),
+        tabBarActiveTintColor: "orange",
         tabBarInactiveTintColor: "gray",
-        tabBarStyle: {
-          backgroundColor: "white",
-        },
-        tabBarLabelStyle: {
-          fontSize: 12,
-        },
       }}
       />
 
-      <Tabs.Screen
-      name="Order"
+      <Tabs.Screen name="order"
       options={{
-        headerTitle: "Order Page",
-        tabBarIcon: ({color}) => <Ionicons name="cart" size={24} color={color} />,
-        tabBarLabel: "Order",
-        tabBarActiveTintColor: "blue",
+        title: "Your Orders",
+        tabBarLabel: "Orders",
+        tabBarIcon: ({color}) => (
+          <Ionicons name="cart" size={24} color={color} />
+        ),
+        tabBarActiveTintColor: "orange",
         tabBarInactiveTintColor: "gray",
-        tabBarStyle: {
-          backgroundColor: "white",
-        },
-        tabBarLabelStyle: {
-          fontSize: 12,
-        },
-      }}
-      />
+      }} />
+
+      <Tabs.Screen name="profile"
+        options={{
+          title: "Profile",
+          tabBarLabel: "Profile",
+          tabBarIcon: ({color}) => (
+            <Ionicons name="person" size={24} color={color} />
+          ),
+          tabBarActiveTintColor: "orange",
+          tabBarInactiveTintColor: "gray",
+        }} />
 
     </Tabs>
   )
