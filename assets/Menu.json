@@ -1,0 +1,104 @@
+[
+    {
+        "name" : "Chicken & Chips",
+        "img" : "./images/Darys/chicekn & chips.jpg",
+        "description" : "chicken, Green Salad, Chips",
+        "price" : 60
+    },
+    {
+        "name" : "Chicken & Salads",
+        "img" : "./images/Darys/chicken and saldds.jpg",
+        "description" : "Chicken, Cawslow, Tomato Soup",
+        "price" : 70
+    },
+    {
+        "name" : "Chicken & Chips",
+        "img" : "./images/Darys/chicken chips.jpg",
+        "description" : "Chicken, Chips, cawslow",
+        "price" : 60
+    },
+    {
+        "name" : "Chicken & Pap",
+        "img" : "./images/Darys/chicken pap.jpg",
+        "description" : "Chicken, Pap, Tomatoes, Cawslow",
+        "price" : 110
+    },
+    {
+        "name" : "Chicken & Rice",
+        "img" : "./images/Darys/chicken salad and Rice.jpg",
+        "description" : "Chicken, Rice, Cawslow, Tomato Soup",
+        "price" : 110
+    },
+    {
+        "name" : "DagWood",
+        "img" : "./images/Darys/DagWood.jpg",
+        "description" : "Patty, Chips, Egg, Polony, Cheese, Letture",
+        "price" : 40
+    },
+    {
+        "name" : "GTI 7",
+        "img" : "./images/Darys/GTI 7.jpg",
+        "description" : "Atchar, Lettuce, Cheese, Russian, Chips",
+        "price" : 25
+    },
+    {
+        "name" : "OPC",
+        "img" : "./images/Darys/OPC.jpg",
+        "description" : "Atchar, Lettuce, Polony, Vienna, Chips",
+        "price" : 18
+    },
+    {
+        "name" : "Chicken & Pap",
+        "img" : "./images/Darys/pap chicken nd salad.jpg",
+        "description" : "Chicken, Pap, Cawslow, Chakalaka",
+        "price" : 110
+    },
+    {
+        "name" : "Ribs and Salad",
+        "img" : "./images/Darys/Ribs and Salad.jpg",
+        "description" : "Ribs, Cawslow, Green Salad",
+        "price" : 70
+    },
+    {
+        "name" : "Salad",
+        "img" : "./images/Darys/Salad.jpg",
+        "description" : "Green Salad",
+        "price" : 15
+    },
+    {
+        "name" : "Sandwhich",
+        "img" : "./images/Darys/sandwhich.jpg",
+        "description" : "Egg Sandwhich, Vienna, Patty",
+        "price" : 20
+    },
+    {
+        "name" : "Steak & Rice",
+        "img" : "./images/Darys/Steak and more salad.jpg",
+        "description" : "Steak, Rice, Tomotoe Soup, Cawslow",
+        "price" : 110
+    },
+    {
+        "name" : "Steak & Pap",
+        "img" : "./images/Darys/Steak pap.jpg",
+        "description" : "Steak, Pap, Tomatoes, Cawslow",
+        "price" : 110
+    },
+    {
+        "name" : "Steak and Vors",
+        "img" : "./images/Darys/Steak Salad.jpg",
+        "description" : "Steak, vors and a salad of your choice",
+        "price" : 110
+    },
+    {
+        "name" : "Wings and Green Salad",
+        "img" : "./images/Darys/wing nd salads.jpg",
+        "description" : "Chicken wings, Green Salad",
+        "price" : 110
+    },
+    {
+        "name" : "Wings and Grilled Vegies",
+        "img" : "./images/Darys/Wings and Salad.jpg",
+        "description" : "Chicken Wings, Grilled Peppers, Cawslow",
+        "price" : 110
+    }
+]
