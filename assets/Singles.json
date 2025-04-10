@@ -1,19 +1,19 @@
 [
     {
         "name" : "Small Chips",
-        "img" : "",
+        "img" : "./images/Darys/noImage.jfif",
         "description" : "Small Fries",
         "price" : 25
     },
     {
         "name" : "Medium Chips",
-        "img" : "",
+        "img" : "./images/Darys/noImage.jfif",
         "description" : "Medium Fries",
         "price" : 50
     },
     {
         "name" : "Large Chips",
-        "img" : "",
+        "img" : "./images/Darys/noImage.jfif",
         "description" : "Large Fries",
         "price" : 75
     },
@@ -25,91 +25,91 @@
     },
     {
         "name" : "Chakalaka",
-        "img" : "",
+        "img" : "./images/Darys/noImage.jfif",
         "description" : "Chakalaka",
         "price" : 5
     },
     {
         "name" : "Cabbage",
-        "img" : "",
+        "img" : "./images/Darys/noImage.jfif",
         "description" : "Cabbage",
         "price" : 5
     },
     {
         "name" : "Cawslow",
-        "img" : "",
+        "img" : "./images/Darys/noImage.jfif",
         "description" : "Cawslow",
         "price" : 5
     },
     {
         "name" : "Rice",
-        "img" : "",
+        "img" : "./images/Darys/noImage.jfif",
         "description" : "Rice",
         "price" : 10
     },
     {
         "name" : "Pap",
-        "img" : "",
+        "img" : "./images/Darys/noImage.jfif",
         "description" : "Maize meal",
         "price" : 10
     },
     {
         "name" : "Atchar",
-        "img" : "",
+        "img" : "./images/Darys/noImage.jfif",
         "description" : "Atchar",
         "price" : 5
     },
     {
         "name" : "1/2 Chicken",
-        "img" : "",
+        "img" : "./images/Darys/noImage.jfif",
         "description" : "Half a chicken",
         "price" : 40
     },
     {
         "name" : "Full Chicken",
-        "img" : "",
+        "img" : "./images/Darys/noImage.jfif",
         "description" : "Full grilled chicken",
         "price" : 80
     },
     {
         "name" : "Steak",
-        "img" : "",
+        "img" : "./images/Darys/noImage.jfif",
         "description" : "Grilled steak",
         "price" : 40
     },
     {
         "name" : "Vors",
-        "img" : "",
+        "img" : "./images/Darys/noImage.jfif",
         "description" : "Vors",
         "price" : 50
     },
     {
         "name" : "Ribs",
-        "img" : "",
+        "img" : "./images/Darys/noImage.jfif",
         "description" : "Ribs",
         "price" : 70
     },
     {
         "name" : "Fish",
-        "img" : "",
+        "img" : "./images/Darys/noImage.jfif",
         "description" : "Fish",
         "price" : 40
     },
     {
         "name" : "Chicken Wings",
-        "img" : "",
+        "img" : "./images/Darys/noImage.jfif",
         "description" : "Chicken Wings",
         "price" : 40
     },
     {
         "name" : "Russian",
-        "img" : "",
+        "img" : "./images/Darys/noImage.jfif",
         "description" : "Russian",
         "price" : 5
     },
     {
         "name" : "Vienna",
-        "img" : "",
+        "img" : "./images/Darys/noImage.jfif",
         "description" : "Vienna",
         "price" : 7
     }
