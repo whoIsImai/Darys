@@ -100,5 +100,23 @@
         "img" : "./images/Darys/Wings and Salad.jpg",
         "description" : "Chicken Wings, Grilled Peppers, Cawslow",
         "price" : 110
+    },
+    {
+        "name" : "Chicken & Pap",
+        "img" : "./images/Darys/Wings Salad Pap.jpg",
+        "description" : "Chicken, Pap, Cawslow, cabbage",
+        "price" : 110
+    },
+    {
+        "name" : "Chicken & Pap",
+        "img" : "./images/Darys/Wings, Pap and Salad.jpg",
+        "description" : "Chicken, Pap, Cawslow, Chakalaka",
+        "price" : 110
+    },
+    {
+        "name" : "Chicken Wings",
+        "img" : "./images/Darys/Wings.jpg",
+        "description" : "Grilled chicken wings",
+        "price" : 50
     }
 ]
