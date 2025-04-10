@@ -1,0 +1,62 @@
+[
+    {
+        "name" : "Vivo",
+        "img" : "",
+        "description" : "Atchar, Lettuce, Polony, Chips",
+        "price" : 14
+    },
+    {
+        "name" : "OPC",
+        "img" : "./images/Darys/OPC.jpg",
+        "description" : "Atchar, Lettuce, Polony, Vienna, Chips",
+        "price" : 18
+    },
+    {
+        "name" : "Mazda 3",
+        "img" : "",
+        "description" : "Atchar, Lettuce, Burger, Eggs, Cheese, Chips",
+        "price" : 20
+    },
+    {
+        "name" : "A3",
+        "img" : "",
+        "description" : "Atchar, Lettuce, Egg, Cheese, Vienna, Cheese",
+        "price" : 22
+    },
+    {
+        "name" : "GTI 7",
+        "img" : "./images/Darys/GTI 7.jpg",
+        "description" : "Atchar, Lettuce, Cheese, Russian, Chips",
+        "price" : 25
+    },
+    {
+        "name" : "Juke",
+        "img" : "",
+        "description" : "Atchar, Lettuce, Burger, Russian, Chips",
+        "price" : 26
+    },
+    {
+        "name" : "Amarok",
+        "img" : "",
+        "description" : "Atchar, Lettuce, Cheese, Steak, Chips",
+        "price" : 32
+    },
+    {
+        "name" : "M L63",
+        "img" : "",
+        "description" : "Atchar, Lettuce, Polony, Vienna, Cheese, Burger, Egg, Russian, Chips",
+        "price" : 35
+    },
+    {
+        "name" : "DagWood",
+        "img" : "./images/Darys/DagWood.jpg",
+        "description" : "Patty, Chips, Egg, Polony, Cheese, Letture",
+        "price" : 40
+    },
+    {
+        "name" : "Viano",
+        "img" : "",
+        "description" : "Atchar, Lettuce, Polony, Egg, Cheese, Burger, vienna, Steak, Russian, Chips",
+        "price" : 55
+    }
+]

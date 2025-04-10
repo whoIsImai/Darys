@@ -30,24 +30,6 @@
         "price" : 110
     },
     {
-        "name" : "DagWood",
-        "img" : "./images/Darys/DagWood.jpg",
-        "description" : "Patty, Chips, Egg, Polony, Cheese, Letture",
-        "price" : 40
-    },
-    {
-        "name" : "GTI 7",
-        "img" : "./images/Darys/GTI 7.jpg",
-        "description" : "Atchar, Lettuce, Cheese, Russian, Chips",
-        "price" : 25
-    },
-    {
-        "name" : "OPC",
-        "img" : "./images/Darys/OPC.jpg",
-        "description" : "Atchar, Lettuce, Polony, Vienna, Chips",
-        "price" : 18
-    },
-    {
         "name" : "Chicken & Pap",
         "img" : "./images/Darys/pap chicken nd salad.jpg",
         "description" : "Chicken, Pap, Cawslow, Chakalaka",
