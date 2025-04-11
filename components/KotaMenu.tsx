@@ -1,7 +1,8 @@
 import Kotas from '../assets/Kotas.json'
 import { View, Text, StyleSheet, Pressable, SafeAreaView, FlatList} from 'react-native'
 import {Ionicons} from '@expo/vector-icons'
-import {Image} from 'expo-image'
+import FastImage from 'react-native-fast-image'
+
 
 const styles = StyleSheet.create({
     container: {
@@ -77,8 +78,8 @@ export default function KotaMenu() {
         
     const renderItem = ({ item }: { item: KotaItem }) => (
             <View style={styles.card}>
-                <Image source={{uri: item.img}} style={styles.image} />
                 <Text style={styles.text}>{item.name}</Text>
+                <FastImage source={{uri: item.img}} style={styles.image} />
                 <Text style={styles.desc}>{item.description}</Text>
                 <Text style={styles.price}>R.{item.price}</Text>
                 <Pressable style={styles.button}>
