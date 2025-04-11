@@ -1,6 +1,7 @@
-import { Text, View, StyleSheet, ScrollView } from "react-native";
-import MenuBox
- from "@/components/MenuBox";
+import { Text, View, StyleSheet, ScrollView } from "react-native"
+import MenuBox from "@/components/MenuBox"
+
+
 export default function index() {
   const styles = StyleSheet.create({
     container: {
