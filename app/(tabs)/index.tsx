@@ -4,41 +4,49 @@ import MenuBox from "@/components/MenuBox"
 
 export default function index() {
   const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-    },
     header: {
-      fontSize: 24,
+      fontSize: 29,
       fontWeight: "bold",
       marginBottom: 20,
       textAlign: "center",
       color: "#333",
+    },
+    MenuBoxContainer:{
+      flexDirection: 'row', 
+      justifyContent: 'space-between', 
+      position: 'relative',
+      top: -20, 
+      height: 100,
     }
   });
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView>
       <Text style={styles.header}>Welcome to Darys</Text>
-      <MenuBox
-        title="Chips"
-        onPress={() => {
-          console.log("Meals");
-        }}
-      />
-      <MenuBox
-        title="Meals"
-        onPress={() => {
-          console.log("Orders");
-        }}
-      />
-      <MenuBox
-        title="Singles"
-        onPress={() => {
-          console.log("Profile");
-        }}
-      />
+
+      <View style={styles.MenuBoxContainer}>
+          <MenuBox
+            title="Chips"
+            onPress={() => {
+              console.log("Meals");
+            }}
+            name="Chips"
+          />
+          <MenuBox
+            title="Meals"
+            onPress={() => {
+              console.log("Orders");
+            }}
+            name="Meals"
+          />
+          <MenuBox
+            title="Singles"
+            onPress={() => {
+              console.log("Profile");
+            }}
+            name="Singles"
+          />
+      </View>
     </ScrollView>
   );
 }
