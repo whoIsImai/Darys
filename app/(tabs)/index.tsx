@@ -25,27 +25,7 @@ export default function index() {
       <Text style={styles.header}>Welcome to Darys</Text>
 
       <View style={styles.MenuBoxContainer}>
-          <MenuBox
-            title="Chips"
-            onPress={() => {
-              console.log("Meals");
-            }}
-            name="Chips"
-          />
-          <MenuBox
-            title="Meals"
-            onPress={() => {
-              console.log("Orders");
-            }}
-            name="Meals"
-          />
-          <MenuBox
-            title="Singles"
-            onPress={() => {
-              console.log("Profile");
-            }}
-            name="Singles"
-          />
+          <MenuBox />
       </View>
     </ScrollView>
   );

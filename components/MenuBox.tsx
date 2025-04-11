@@ -3,10 +3,9 @@ import { useState } from "react"
 
 const styles = StyleSheet.create({
   box: {
-    backgroundColor: "orange",
     height: 50,
     padding: 0,
-    borderRadius: 5,
+    borderRadius: 50,
     margin: 25,
     position: "relative",
     top: -5,
@@ -15,44 +14,43 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  text: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#fff",
-    textAlign: "center",
-  },
   activeButton: {
-    backgroundColor: '#006400',
+    backgroundColor: 'orange',
   },
   inactiveButton: {
     backgroundColor: '#ccc',
   },
   activeText: {
-    color: '#fff',
+  color: 'white',
     fontWeight: 'bold',
+    fontSize: 18,
   },
   inactiveText: {
     color: '#333',
+    fontWeight: 'bold',
+    fontSize: 18,
   },
 })
 
-type MenuBoxProps = {
-  title: string,
-  onPress: () => void,
-  name: string
-}
+const menuBox = [
+  { name: 'chips', title: 'Chips' },
+  { name: 'meals', title: 'Meals' },
+  { name: 'singles', title: 'Singles' },
+]
 
-export default function MenuBox({ title, onPress, name } : MenuBoxProps) {
+
+export default function MenuBox() {
 
     const [selected, setSelected] = useState('')
 
-    onPress = () => {
-        setSelected(name)
-    }
+   
 
   return (
-    <Pressable onPress={onPress} style={[styles.box, selected === name ? styles.activeButton : styles.inactiveButton]}>
-      <Text style={[styles.text, selected === name ? styles.activeText : styles.inactiveText]}>{title}</Text>
-    </Pressable>
+    menuBox.map((btn) => (
+      <Pressable key={btn.name} onPress={() => setSelected(btn.name)}
+        style={[styles.box, selected === btn.name ? styles.activeButton : styles.inactiveButton]}>
+        <Text style={[selected === btn.name ? styles.activeText : styles.inactiveText]}>{btn.title}</Text>
+      </Pressable>
+    ))
   )
 }
