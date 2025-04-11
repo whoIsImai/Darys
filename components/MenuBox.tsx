@@ -41,7 +41,7 @@ const menuBox = [
 
 export default function MenuBox() {
 
-    const [selected, setSelected] = useState('')
+    const [selected, setSelected] = useState('chips')
 
    
 
