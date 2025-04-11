@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet, ScrollView } from "react-native"
 import MenuBox from "@/components/MenuBox"
-
+import KotaMenu from "../../components/KotaMenu"
 
 export default function index() {
   const styles = StyleSheet.create({
@@ -12,7 +12,7 @@ export default function index() {
       color: "#333",
     },
     MenuBoxContainer:{
-      flexDirection: 'row', 
+      flexDirection: 'row',
       justifyContent: 'space-between', 
       position: 'relative',
       top: -20, 
@@ -21,12 +21,13 @@ export default function index() {
   });
 
   return (
-    <ScrollView>
+    <View style={{ flex: 1, height: "100%", backgroundColor: "#fff" }}>
       <Text style={styles.header}>Welcome to Darys</Text>
 
       <View style={styles.MenuBoxContainer}>
           <MenuBox />
       </View>
-    </ScrollView>
+      <KotaMenu />
+    </View>
   );
 }

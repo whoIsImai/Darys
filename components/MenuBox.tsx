@@ -1,6 +1,7 @@
 import { StyleSheet, View, Pressable, Text } from "react-native"
 import { useState } from "react"
 
+
 const styles = StyleSheet.create({
   box: {
     height: 50,
@@ -46,8 +47,9 @@ export default function MenuBox() {
    
 
   return (
+    
     menuBox.map((btn) => (
-      <Pressable key={btn.name} onPress={() => setSelected(btn.name)}
+      <Pressable key={btn.name} onPress={() => setSelected(btn.name)} 
         style={[styles.box, selected === btn.name ? styles.activeButton : styles.inactiveButton]}>
         <Text style={[selected === btn.name ? styles.activeText : styles.inactiveText]}>{btn.title}</Text>
       </Pressable>
