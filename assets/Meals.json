@@ -91,7 +91,7 @@
     },
     {
         "name" : "Fish & Chips",
-        "img" : "./images/Darys/noImage.jfif",
+        "img" : "./images/Darys/noImage.png",
         "description" : "Fish, Chips",
         "price" : 50
     }
