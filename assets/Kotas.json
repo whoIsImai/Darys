@@ -1,7 +1,7 @@
 [
     {
         "name" : "Vivo",
-        "img" : "noImage.jfif",
+        "img" : "noImage.png",
         "description" : "Atchar, Lettuce, Polony, Chips",
         "price" : 14
     },
@@ -13,7 +13,7 @@
     },
     {
         "name" : "Mazda 3",
-        "img" : "noImage.jfif",
+        "img" : "noImage.png",
         "description" : "Atchar, Lettuce, Burger, Eggs, Cheese, Chips",
         "price" : 20
     },
@@ -25,7 +25,7 @@
     },
     {
         "name" : "A3",
-        "img" : "noImage.jfif",
+        "img" : "noImage.png",
         "description" : "Atchar, Lettuce, Egg, Cheese, Vienna, Cheese",
         "price" : 22
     },
@@ -37,19 +37,19 @@
     },
     {
         "name" : "Juke",
-        "img" : "noImage.jfif",
+        "img" : "noImage.png",
         "description" : "Atchar, Lettuce, Burger, Russian, Chips",
         "price" : 26
     },
     {
         "name" : "Amarok",
-        "img" : "noImage.jfif",
+        "img" : "noImage.png",
         "description" : "Atchar, Lettuce, Cheese, Steak, Chips",
         "price" : 32
     },
     {
         "name" : "M L63",
-        "img" : "noImage.jfif",
+        "img" : "noImage.png",
         "description" : "Atchar, Lettuce, Polony, Vienna, Cheese, Burger, Egg, Russian, Chips",
         "price" : 35
     },
@@ -61,7 +61,7 @@
     },
     {
         "name" : "Viano",
-        "img" : "noImage.jfif",
+        "img" : "noImage.png",
         "description" : "Atchar, Lettuce, Polony, Egg, Cheese, Burger, vienna, Steak, Russian, Chips",
         "price" : 55
     }
