@@ -21,13 +21,13 @@ export default function index() {
   });
 
   return (
-    <>
+    <View style={{ flex: 1, height: "100%", backgroundColor: "#fff" }}>
       <Text style={styles.header}>Welcome to Darys</Text>
 
       <View style={styles.MenuBoxContainer}>
           <MenuBox />
       </View>
       <KotaMenu />
-    </>
+    </View>
   );
 }
