@@ -89,6 +89,7 @@ const imageMap: { [key: string]: any } = {
 export default function KotaMenu() {
         
     const renderItem = ({ item }: { item: KotaItem }) => (
+
             <View style={styles.card}>
                 <Image source={imageMap[item.img]} style={styles.image} />
                 
