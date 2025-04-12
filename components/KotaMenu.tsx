@@ -1,8 +1,7 @@
 import Kotas from '../assets/Kotas.json'
 import { View, Text, StyleSheet, Pressable, SafeAreaView, FlatList} from 'react-native'
 import {Ionicons} from '@expo/vector-icons'
-import FastImage from 'react-native-fast-image'
-
+import {Image} from 'expo-image'
 
 const styles = StyleSheet.create({
     container: {
@@ -13,20 +12,25 @@ const styles = StyleSheet.create({
         top: -40,
     },
     image: {
-        width: "50%",
-        height: 50,
+        width: 170,
+        marginTop: -1,
+        height: 150,
         resizeMode: 'cover',
-        marginBottom: 8,
-        borderRadius: 25,
+        marginBottom: 1,
+        borderRadius: 10,
+        
     },
     text: {
-        fontSize: 29,
+        fontSize: 20,
         fontWeight: "bold",
     },
     price: {
-        fontSize: 16,
+        fontSize: 20,
         color: "gray",
         fontWeight: "bold",
+        position: 'relative',
+        top: 30,
+        left: -30,
     },
     button: {
         backgroundColor: "orange",
@@ -34,12 +38,18 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         marginLeft: 10,
         marginTop: 10,
+        position: 'relative',
+        left: 40,
+        top: -15,
     },
     desc: {
-        fontSize: 13,
+        fontSize: 15,
         fontStyle: "italic",
         fontWeight: "bold",
         color: "gray",
+        textAlign: "center",
+        position: 'relative',
+        top: 15,
     },
     card: {
         width: "48%",
@@ -59,12 +69,6 @@ const styles = StyleSheet.create({
         elevation: 5, // for Android shadow
         alignItems: 'center',
       },
-    heart: {
-        position: 'absolute',
-        top: 10,
-        right: 10,
-        zIndex: 1,
-    }
 })
 
 type KotaItem = {
@@ -74,14 +78,24 @@ type KotaItem = {
     img: string,
 }
 
+const imageMap: { [key: string]: any } = {
+       "noImage.png": require("../assets/images/Darys/noImage.png"),
+        "OPC.jpg": require("../assets/images/Darys/OPC.jpg"),
+        "sandwhich.jpg": require("../assets/images/Darys/sandwhich.jpg"),
+        "GTI 7.jpg": require("../assets/images/Darys/GTI 7.jpg"),
+        "DagWood.jpg": require("../assets/images/Darys/DagWood.jpg"),
+  }
+
 export default function KotaMenu() {
         
     const renderItem = ({ item }: { item: KotaItem }) => (
+        console.log("item link", `../assets${item.img}`),
             <View style={styles.card}>
+                <Image source={imageMap[item.img]} style={styles.image} />
+                
                 <Text style={styles.text}>{item.name}</Text>
-                <FastImage source={{uri: item.img}} style={styles.image} />
                 <Text style={styles.desc}>{item.description}</Text>
-                <Text style={styles.price}>R.{item.price}</Text>
+                <Text style={styles.price}>R.{item.price}.00</Text>
                 <Pressable style={styles.button}>
                     <Ionicons name="add" size={24} color="white" />
                 </Pressable>

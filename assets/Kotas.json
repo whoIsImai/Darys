@@ -1,67 +1,67 @@
 [
     {
         "name" : "Vivo",
-        "img" : "./images/Darys/noImage.jfif",
+        "img" : "noImage.jfif",
         "description" : "Atchar, Lettuce, Polony, Chips",
         "price" : 14
     },
     {
         "name" : "OPC",
-        "img" : "./images/Darys/OPC.jpg",
+        "img" : "OPC.jpg",
         "description" : "Atchar, Lettuce, Polony, Vienna, Chips",
         "price" : 18
     },
     {
         "name" : "Mazda 3",
-        "img" : "./images/Darys/noImage.jfif",
+        "img" : "noImage.jfif",
         "description" : "Atchar, Lettuce, Burger, Eggs, Cheese, Chips",
         "price" : 20
     },
     {
         "name" : "Sandwhich",
-        "img" : "./images/Darys/sandwhich.jpg",
+        "img" : "sandwhich.jpg",
         "description" : "Egg Sandwhich, Vienna, Patty",
         "price" : 20
     },
     {
         "name" : "A3",
-        "img" : "./images/Darys/noImage.jfif",
+        "img" : "noImage.jfif",
         "description" : "Atchar, Lettuce, Egg, Cheese, Vienna, Cheese",
         "price" : 22
     },
     {
         "name" : "GTI 7",
-        "img" : "./images/Darys/GTI 7.jpg",
+        "img" : "GTI 7.jpg",
         "description" : "Atchar, Lettuce, Cheese, Russian, Chips",
         "price" : 25
     },
     {
         "name" : "Juke",
-        "img" : "./images/Darys/noImage.jfif",
+        "img" : "noImage.jfif",
         "description" : "Atchar, Lettuce, Burger, Russian, Chips",
         "price" : 26
     },
     {
         "name" : "Amarok",
-        "img" : "./images/Darys/noImage.jfif",
+        "img" : "noImage.jfif",
         "description" : "Atchar, Lettuce, Cheese, Steak, Chips",
         "price" : 32
     },
     {
         "name" : "M L63",
-        "img" : "./images/Darys/noImage.jfif",
+        "img" : "noImage.jfif",
         "description" : "Atchar, Lettuce, Polony, Vienna, Cheese, Burger, Egg, Russian, Chips",
         "price" : 35
     },
     {
         "name" : "DagWood",
-        "img" : "./images/Darys/DagWood.jpg",
+        "img" : "DagWood.jpg",
         "description" : "Patty, Chips, Egg, Polony, Cheese, Letture",
         "price" : 40
     },
     {
         "name" : "Viano",
-        "img" : "./images/Darys/noImage.jfif",
+        "img" : "noImage.jfif",
         "description" : "Atchar, Lettuce, Polony, Egg, Cheese, Burger, vienna, Steak, Russian, Chips",
         "price" : 55
     }

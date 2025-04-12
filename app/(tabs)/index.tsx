@@ -12,7 +12,7 @@ export default function index() {
       color: "#333",
     },
     MenuBoxContainer:{
-      flexDirection: 'row',
+      flexDirection: 'row', 
       justifyContent: 'space-between', 
       position: 'relative',
       top: -20, 
