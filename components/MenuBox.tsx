@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
 })
 
 const menuBox = [
-  { name: 'chips', title: 'Chips' },
+  { name: 'kotas', title: 'Kotas' },
   { name: 'meals', title: 'Meals' },
   { name: 'singles', title: 'Singles' },
 ]
@@ -42,7 +42,7 @@ const menuBox = [
 
 export default function MenuBox() {
 
-    const [selected, setSelected] = useState('chips')
+    const [selected, setSelected] = useState('kotas')
 
    
 
