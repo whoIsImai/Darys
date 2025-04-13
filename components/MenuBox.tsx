@@ -2,6 +2,7 @@ import { StyleSheet, View, Pressable, Text, ScrollView } from "react-native"
 import { useState } from "react"
 import KotaMenu from "./KotaMenu"
 import MealMenu from "./MealMenu"
+import SingleMenu from "./SingleMenu"
 
 
 const styles = StyleSheet.create({
@@ -60,6 +61,7 @@ export default function MenuBox() {
 
             { selected === "kotas" && <KotaMenu />}
             { selected === "meals" && <MealMenu />}
+            { selected === "singles" && <SingleMenu />}
       </View>
     </ScrollView>
   )
