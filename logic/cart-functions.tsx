@@ -24,3 +24,15 @@ export const removeFrmCart = (item: cartItem)=> {
 
     removeFromCart(item.id)
 }
+
+export const increment = (item : cartItem)=> {
+    const increaseQuantity = useCart(state => state.increaseQuantity)
+
+    increaseQuantity(item.id)
+}
+
+export const decrement = (item : cartItem)=> {
+    const decrementQuantity = useCart(state => state.decrementQuantity)
+
+    decrementQuantity(item.id)
+}
