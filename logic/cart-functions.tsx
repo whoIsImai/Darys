@@ -18,3 +18,9 @@ export const addCart = (item : cartItem)=> {
       price: item.price
     })
 }
+
+export const removeFrmCart = (item: cartItem)=> {
+    const removeFromCart = useCart(state => state.removeFromCart)
+
+    removeFromCart(item.id)
+}
