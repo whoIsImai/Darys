@@ -1,113 +1,132 @@
 [
     {
+        "id" : "112",
         "name" : "Small Chips",
         "img" : "noImage.png",
         "description" : "Small Fries",
         "price" : 25
     },
     {
+        "id" : "113",
         "name" : "Medium Chips",
         "img" : "noImage.png",
         "description" : "Medium Fries",
         "price" : 50
     },
     {
+        "id" : "114",
         "name" : "Large Chips",
         "img" : "noImage.png",
         "description" : "Large Fries",
         "price" : 75
     },
     {
+        "id" : "115",
         "name" : " Green Salad",
         "img" : "Salad.jpg",
         "description" : "Green Salad",
         "price" : 5
     },
     {
+        "id" : "116",
         "name" : "Chakalaka",
         "img" : "noImage.png",
         "description" : "Chakalaka",
         "price" : 5
     },
     {
+        "id" : "117",
         "name" : "Cabbage",
         "img" : "noImage.png",
         "description" : "Cabbage",
         "price" : 5
     },
     {
+        "id" : "118",
         "name" : "Cawslow",
         "img" : "noImage.png",
         "description" : "Cawslow",
         "price" : 5
     },
     {
+        "id" : "119",
         "name" : "Rice",
         "img" : "noImage.png",
         "description" : "Rice",
         "price" : 10
     },
     {
+        "id" : "120",
         "name" : "Pap",
         "img" : "noImage.png",
         "description" : "Maize meal",
         "price" : 10
     },
     {
+        "id" : "121",
         "name" : "Atchar",
         "img" : "noImage.png",
         "description" : "Atchar",
         "price" : 5
     },
     {
+        "id" : "122",
         "name" : "1/2 Chicken",
         "img" : "noImage.png",
         "description" : "Half a chicken",
         "price" : 40
     },
     {
+        "id" : "123",
         "name" : "Full Chicken",
         "img" : "noImage.png",
         "description" : "Full grilled chicken",
         "price" : 80
     },
     {
+        "id" : "124",
         "name" : "Steak",
         "img" : "noImage.png",
         "description" : "Grilled steak",
         "price" : 40
     },
     {
+        "id" : "125",
         "name" : "Vors",
         "img" : "noImage.png",
         "description" : "Vors",
         "price" : 50
     },
     {
+        "id" : "126",
         "name" : "Ribs",
         "img" : "noImage.png",
         "description" : "Ribs",
         "price" : 70
     },
     {
+        "id" : "127",
         "name" : "Fish",
         "img" : "noImage.png",
         "description" : "Fish",
         "price" : 40
     },
     {
+        "id" : "128",
         "name" : "Chicken Wings",
         "img" : "noImage.png",
         "description" : "Chicken Wings",
         "price" : 40
     },
     {
+        "id" : "129",
         "name" : "Russian",
         "img" : "noImage.png",
         "description" : "Russian",
         "price" : 5
     },
     {
+        "id" : "130",
         "name" : "Vienna",
         "img" : "noImage.png",
         "description" : "Vienna",
