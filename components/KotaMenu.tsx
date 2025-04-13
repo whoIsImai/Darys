@@ -104,7 +104,7 @@ export default function KotaMenu() {
 
     return(
         <SafeAreaView style={styles.container}>
-            <FlatList
+            <FlatList scrollEnabled={false}
             data={Kotas}
             renderItem={renderItem}
             key={'two-columns'}

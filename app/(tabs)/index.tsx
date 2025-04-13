@@ -24,10 +24,10 @@ export default function index() {
     <View style={{ flex: 1, height: "100%", backgroundColor: "#fff" }}>
       <Text style={styles.header}>Welcome to Darys</Text>
 
-      <View style={styles.MenuBoxContainer}>
+      
           <MenuBox />
-      </View>
-      <KotaMenu />
+    
+     
     </View>
   );
 }

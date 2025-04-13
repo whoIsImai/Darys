@@ -1,13 +1,13 @@
-import { StyleSheet, View, Pressable, Text } from "react-native"
+import { StyleSheet, View, Pressable, Text, ScrollView } from "react-native"
 import { useState } from "react"
+import KotaMenu from "./KotaMenu"
 
 
 const styles = StyleSheet.create({
   box: {
     height: 50,
-    padding: 0,
     borderRadius: 50,
-    margin: 25,
+    marginLeft: 20,
     position: "relative",
     top: -5,
     width: 80,
@@ -44,15 +44,21 @@ export default function MenuBox() {
 
     const [selected, setSelected] = useState('kotas')
 
-   
-
   return (
-    
-    menuBox.map((btn) => (
-      <Pressable key={btn.name} onPress={() => setSelected(btn.name)} 
-        style={[styles.box, selected === btn.name ? styles.activeButton : styles.inactiveButton]}>
-        <Text style={[selected === btn.name ? styles.activeText : styles.inactiveText]}>{btn.title}</Text>
-      </Pressable>
-    ))
+    <ScrollView nestedScrollEnabled>
+      <View>
+        <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginBottom: 50, marginLeft: 30 }}>
+            {menuBox.map((btn) => (
+              <Pressable key={btn.name} onPress={() => setSelected(btn.name)} 
+                style={[styles.box, selected === btn.name ? styles.activeButton : styles.inactiveButton]}>
+                <Text style={[selected === btn.name ? styles.activeText : styles.inactiveText]}>{btn.title}</Text>
+              </Pressable>
+            ))}
+
+          </View>
+
+            { selected === "kotas" && <KotaMenu />}
+      </View>
+    </ScrollView>
   )
 }
