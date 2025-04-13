@@ -96,7 +96,7 @@ export default function KotaMenu() {
                 <Text style={styles.text}>{item.name}</Text>
                 <Text style={styles.desc}>{item.description}</Text>
                 <Text style={styles.price}>R.{item.price}.00</Text>
-                <Pressable style={styles.button}>
+                <Pressable style={styles.button} onPress={ () => console.log(item.name)}>
                     <Ionicons name="add" size={24} color="white" />
                 </Pressable>
             </View>
