@@ -2,6 +2,7 @@ import Singles from '../assets/Singles.json'
 import { View, Text, StyleSheet, Pressable, SafeAreaView, FlatList} from 'react-native'
 import {Ionicons} from '@expo/vector-icons'
 import {Image} from 'expo-image'
+import { ImageMap } from '@/utils/imageMap'
 
 const styles = StyleSheet.create({
     container: {
@@ -78,17 +79,12 @@ type SingleItem = {
     img: string,
 }
 
-const imageMap: { [key: string]: any } = {
-    "noImage.png": require("../assets/images/Darys/noImage.png"),
-    "Salad.jpg" : require("../assets/images/Darys/Salad.jpg")
-}
-
 export default function SingleMenu(){
 
     const renderItem = ({ item }: { item: SingleItem }) => (
 
         <View style={styles.card}>
-            <Image source={imageMap[item.img]} style={styles.image} />
+            <Image source={ImageMap[item.img]} style={styles.image} />
             
             <Text style={styles.text}>{item.name}</Text>
             <Text style={styles.desc}>{item.description}</Text>

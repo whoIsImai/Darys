@@ -1,6 +1,7 @@
 import {View, Text, StyleSheet} from 'react-native'
 import { useCart } from '@/logic/useCart'
 import {Image} from 'expo-image'
+import { ImageMap } from '@/utils/imageMap'
 
 const styles = StyleSheet.create({
   card: {
@@ -41,16 +42,12 @@ export default function order(){
     return (
       <View>
         {cart.map((item : cartItem) => {
-          console.log(item.img);
-          const imageMap: Record<string, any> = {
-            [item.img]: require(`../../assets/images/Darys/${item.img}`)
-          };
           return (
             <View style={styles.card} key={item.id}>
               <Image
-            source={ imageMap[item.img]}
-            style={{ width: 100, height: 100, borderRadius: 8 }}
-          />
+                source={ImageMap[item.img] || ImageMap["noImage.png"]}
+                style={{ width: 100, height: 100, borderRadius: 8 }}
+              />
               <Text>
                 {item.name} x{item.quantity} - R{item.price * item.quantity}
               </Text>

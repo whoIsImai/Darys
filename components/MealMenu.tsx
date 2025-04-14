@@ -2,6 +2,7 @@ import Meals from '../assets/Meals.json'
 import { View, Text, StyleSheet, Pressable, SafeAreaView, FlatList} from 'react-native'
 import {Ionicons} from '@expo/vector-icons'
 import {Image} from 'expo-image'
+import { ImageMap } from '@/utils/imageMap'
 
 
 const styles = StyleSheet.create({
@@ -79,31 +80,13 @@ type MealItem = {
     img: string,
 }
 
-const imageMap: {[key : string] : any} = {
-    "noImage.png": require("../assets/images/Darys/noImage.png"),
-    "chicekn & chips.jpg" : require("../assets/images/Darys/chicekn & chips.jpg"),
-    "chicken and saldds.jpg" : require("../assets/images/Darys/chicken and saldds.jpg"),
-    "chicken chips.jpg" : require("../assets/images/Darys/chicken chips.jpg"),
-    "chicken pap.jpg" : require("../assets/images/Darys/chicken pap.jpg"),
-    "chicken salad and Rice.jpg" : require("../assets/images/Darys/chicken salad and Rice.jpg"),
-    "pap chicken nd salad.jpg" : require("../assets/images/Darys/pap chicken nd salad.jpg"),
-    "Ribs and Salad.jpg" : require("../assets/images/Darys/Ribs and Salad.jpg"),
-    "Steak and more salad.jpg" : require("../assets/images/Darys/Steak and more salad.jpg"),
-    "Steak pap.jpg" : require("../assets/images/Darys/Steak pap.jpg"),
-    "Steak Salad.jpg" : require("../assets/images/Darys/Steak Salad.jpg"),
-    "wing nd salads.jpg" : require("../assets/images/Darys/wing nd salads.jpg"),
-    "Wings and Salad.jpg" : require("../assets/images/Darys/Wings and Salad.jpg"),
-    "Wings Salad Pap.jpg" : require("../assets/images/Darys/Wings Salad Pap.jpg"),
-    "Wings, Pap and Salad.jpg" : require("../assets/images/Darys/Wings, Pap and Salad.jpg"),
-    "Wings.jpg" : require("../assets/images/Darys/Wings.jpg")
-}
 
 export default function MealMenu(){
 
     const renderItem = ({ item }: { item: MealItem }) => (
 
         <View style={styles.card}>
-            <Image source={imageMap[item.img]} style={styles.image} />
+            <Image source={ImageMap[item.img]} style={styles.image} />
             
             <Text style={styles.text}>{item.name}</Text>
             <Text style={styles.desc}>{item.description}</Text>

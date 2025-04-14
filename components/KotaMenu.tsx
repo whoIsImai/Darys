@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Pressable, SafeAreaView, FlatList} from 'react-
 import {Ionicons} from '@expo/vector-icons'
 import {Image} from 'expo-image'
 import { useCart } from '@/logic/useCart'
+import { ImageMap } from '@/utils/imageMap'
 
 const styles = StyleSheet.create({
     container: {
@@ -80,20 +81,12 @@ type KotaItem = {
     img: string,
 }
 
-const imageMap: { [key: string]: any } = {
-       "noImage.png": require("../assets/images/Darys/noImage.png"),
-        "OPC.jpg": require("../assets/images/Darys/OPC.jpg"),
-        "sandwhich.jpg": require("../assets/images/Darys/sandwhich.jpg"),
-        "GTI 7.jpg": require("../assets/images/Darys/GTI 7.jpg"),
-        "DagWood.jpg": require("../assets/images/Darys/DagWood.jpg"),
-  }
-
 export default function KotaMenu() {
          const addToCart = useCart(state => state.addToCart)
     const renderItem = ({ item }: { item: KotaItem }) => (
 
             <View style={styles.card}>
-                <Image source={imageMap[item.img]} style={styles.image} />
+                <Image source={ImageMap[item.img]} style={styles.image} />
                 
                 <Text style={styles.text}>{item.name}</Text>
                 <Text style={styles.desc}>{item.description}</Text>
