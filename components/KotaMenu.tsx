@@ -2,6 +2,7 @@ import Kotas from '../assets/Kotas.json'
 import { View, Text, StyleSheet, Pressable, SafeAreaView, FlatList} from 'react-native'
 import {Ionicons} from '@expo/vector-icons'
 import {Image} from 'expo-image'
+import { addCart } from '@/logic/cart-functions'
 
 const styles = StyleSheet.create({
     container: {
@@ -72,6 +73,7 @@ const styles = StyleSheet.create({
 })
 
 type KotaItem = {
+    id: string
     name: string,
     description: string,
     price: number,
@@ -96,7 +98,10 @@ export default function KotaMenu() {
                 <Text style={styles.text}>{item.name}</Text>
                 <Text style={styles.desc}>{item.description}</Text>
                 <Text style={styles.price}>R.{item.price}.00</Text>
-                <Pressable style={styles.button} onPress={ () => console.log(item.name)}>
+                <Pressable style={styles.button} onPress={ () => {
+                    console.log(item.name)
+                    addCart(item)
+                    }}>
                     <Ionicons name="add" size={24} color="white" />
                 </Pressable>
             </View>
