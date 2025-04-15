@@ -4,6 +4,7 @@ import {Image} from 'expo-image'
 import { ImageMap } from '@/utils/imageMap'
 import { Ionicons } from '@expo/vector-icons'
 
+
 const styles = StyleSheet.create({
   card: {
     width: "50%",
@@ -55,11 +56,11 @@ type cartItem = {
 }
 
 export default function order(){
-
-  let totalPrice = 0
   
   const cart = useCart(state => state.cart)
-  
+  const decrementQuantity = useCart(state => state.decrementQuantity)
+  const increaseQuantity = useCart(state => state.increaseQuantity)
+
   if(cart.length !== 0){
     return (
       <ScrollView>
@@ -79,11 +80,15 @@ export default function order(){
               <Text style={styles.price}>R{item.price * item.quantity}.00</Text>
                 
               <View style={{ flexDirection: 'row', alignItems: "center", position: "relative", top:-100, left: 140 }}>
-              <Pressable>
+              <Pressable onPress={()=> {
+                decrementQuantity(item.id)
+              }}>
                 <Ionicons name="remove-outline" style={{width: 30, height: 20, textAlign: "center", verticalAlign: "middle", justifyContent:"center",marginRight: 10, backgroundColor: "orange", color: "white", fontWeight: "black", borderRadius: 50 }} />
               </Pressable>
               <Text style={{borderColor: "orange", fontSize: 15 ,borderRadius: 5, borderStyle:"solid", borderWidth: 1, padding: 7}}>{item.quantity}</Text>
-              <Pressable>
+              <Pressable onPress={()=> {
+                increaseQuantity(item.id)
+              }}>
                 <Ionicons name="add-sharp" style={{width: 30, height: 20, textAlign: "center", verticalAlign: "middle", justifyContent:"center",marginLeft: 10, backgroundColor: "orange", color: "white", fontWeight: "black", borderRadius: 50 }}/>
               </Pressable>
               </View>

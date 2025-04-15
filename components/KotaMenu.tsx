@@ -2,7 +2,7 @@ import Kotas from '../assets/Kotas.json'
 import { View, Text, StyleSheet, Pressable, SafeAreaView, FlatList} from 'react-native'
 import {Ionicons} from '@expo/vector-icons'
 import {Image} from 'expo-image'
-import { useCart } from '@/logic/useCart'
+import { useCart  } from '@/logic/useCart'
 import { ImageMap } from '@/utils/imageMap'
 
 const styles = StyleSheet.create({
