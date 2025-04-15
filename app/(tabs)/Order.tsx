@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
     padding: 5,
     margin: 1,
     marginLeft: 10,
-    marginBottom: 10,
     alignSelf: 'flex-start',
     flexDirection: 'row',
     alignItems: 'center',
@@ -57,15 +56,16 @@ type cartItem = {
 
 export default function order(){
 
+  let totalPrice = 0
   
   const cart = useCart(state => state.cart)
   
   if(cart.length !== 0){
     return (
-      <View>
+      <ScrollView>
         {cart.map((item : cartItem) => {
           return (
-          <ScrollView>
+          <View>
             <View style={styles.card} key={item.id}>
               <Image
                 source={ImageMap[item.img] || ImageMap["noImage.png"]}
@@ -75,9 +75,9 @@ export default function order(){
                 {item.name}
               </Text>
               </View>
-
-              <Text style={styles.price}>R{item.price}.00</Text>
-
+            
+              <Text style={styles.price}>R{item.price * item.quantity}.00</Text>
+                
               <View style={{ flexDirection: 'row', alignItems: "center", position: "relative", top:-100, left: 140 }}>
               <Pressable>
                 <Ionicons name="remove-outline" style={{width: 30, height: 20, textAlign: "center", verticalAlign: "middle", justifyContent:"center",marginRight: 10, backgroundColor: "orange", color: "white", fontWeight: "black", borderRadius: 50 }} />
@@ -87,14 +87,16 @@ export default function order(){
                 <Ionicons name="add-sharp" style={{width: 30, height: 20, textAlign: "center", verticalAlign: "middle", justifyContent:"center",marginLeft: 10, backgroundColor: "orange", color: "white", fontWeight: "black", borderRadius: 50 }}/>
               </Pressable>
               </View>
-           </ScrollView>
+           </View>
+           
           )
         })}
-        <Pressable style={{ flexDirection: 'row', alignItems: "center"}}>
-          <Ionicons name="cash" />
-          <Text>Checkout</Text>
+       
+        <Pressable style={{ flexDirection: 'row', alignItems: "center", alignContent: "center", alignSelf: "center", backgroundColor: "orange", padding: 17, borderRadius: 50}}>
+          <Ionicons name="cash" style={{color: "white", padding: 5, fontSize: 18}} />
+          <Text style={{color: "white", padding: 5, fontSize: 18}}>Checkout</Text>
         </Pressable>
-      </View>
+      </ScrollView>
     )
   }else{ return(
     <View>
