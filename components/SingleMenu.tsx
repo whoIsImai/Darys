@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Pressable, SafeAreaView, FlatList} from 'react-
 import {Ionicons} from '@expo/vector-icons'
 import {Image} from 'expo-image'
 import { ImageMap } from '@/utils/imageMap'
+import { useCart } from '@/logic/useCart'
 
 const styles = StyleSheet.create({
     container: {
@@ -73,6 +74,7 @@ const styles = StyleSheet.create({
 })
 
 type SingleItem = {
+    id: string
     name: string,
     description: string,
     price: number,
@@ -80,6 +82,7 @@ type SingleItem = {
 }
 
 export default function SingleMenu(){
+    const addToCart = useCart(state => state.addToCart)
 
     const renderItem = ({ item }: { item: SingleItem }) => (
 
@@ -89,7 +92,10 @@ export default function SingleMenu(){
             <Text style={styles.text}>{item.name}</Text>
             <Text style={styles.desc}>{item.description}</Text>
             <Text style={styles.price}>R.{item.price}.00</Text>
-            <Pressable style={styles.button} onPress={ () => console.log(item.name)}>
+            <Pressable style={styles.button} onPress={ () => {
+                    console.log(item.name)
+                    addToCart(item)
+                    }}>
                 <Ionicons name="add" size={24} color="white" />
             </Pressable>
         </View>
