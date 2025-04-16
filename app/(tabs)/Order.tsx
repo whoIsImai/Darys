@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     position: "relative",
     top: -105,
     left: 138,
+    marginTop: 15
   }
 })
 
@@ -60,6 +61,7 @@ export default function order(){
   const cart = useCart(state => state.cart)
   const decrementQuantity = useCart(state => state.decrementQuantity)
   const increaseQuantity = useCart(state => state.increaseQuantity)
+  const total = useCart((state) => state.total)
 
   if(cart.length !== 0){
     return (
@@ -93,10 +95,10 @@ export default function order(){
               </Pressable>
               </View>
            </View>
-           
           )
         })}
        
+        <Text style={{ alignItems: "center", alignContent: "center", alignSelf: "center", fontSize:18, marginBottom: 20, fontWeight: "500"}}> Total - R{total}.00</Text>
         <Pressable style={{ flexDirection: 'row', alignItems: "center", alignContent: "center", alignSelf: "center", backgroundColor: "orange", padding: 17, borderRadius: 50}}>
           <Ionicons name="cash" style={{color: "white", padding: 5, fontSize: 18}} />
           <Text style={{color: "white", padding: 5, fontSize: 18}}>Checkout</Text>
