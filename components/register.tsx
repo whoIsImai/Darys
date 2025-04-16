@@ -1,6 +1,7 @@
-import {View, Text, StyleSheet, Pressable, ScrollView} from 'react-native'
+import {View, Text, StyleSheet, Pressable, ScrollView, TextInput} from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useState } from 'react'
+import { Ionicons } from '@expo/vector-icons'
 
 export default function register(){
 
@@ -18,6 +19,15 @@ export default function register(){
 
     const savedetails = async()=> {
         try {
+            if(name.length < 5){
+                alert('Enter fullname')
+                return
+            } 
+            if(number.length <= 9 || number.length > 10){
+                alert("Enter a valid number")
+                return
+            }
+
             await AsyncStorage.setItem('user_data', JSON.stringify(user))
             alert('Information successfully saved')
         } catch (error) {
@@ -27,7 +37,36 @@ export default function register(){
 
     return(
         <View>
-            
+            <TextInput
+                value={name}
+                onChangeText={setName}
+                placeholder='Enter your fullname. This will be used for placing order.'
+            />
+
+            <TextInput 
+                value={password}
+                onChangeText={setPassword}
+                placeholder='Password'
+            />
+
+
+            <TextInput 
+                value={number}
+                onChangeText={setNumber}
+                placeholder='Cell Number'
+            />
+
+
+            <TextInput 
+                value={address}
+                onChangeText={setAddress}
+                placeholder='Your address'
+            />
+
+            <Pressable onPress={savedetails}>
+                <Ionicons name="save" />
+                <Text>Register</Text>
+            </Pressable>
         </View>
     )
 
