@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
 export default function Profile() {
     const [user, setUser] = useState<User>()
   
-    useEffect(() => {
         const loadUsers = async () => {
             try {
                 const jsonData = await AsyncStorage.getItem('user_data')
@@ -58,8 +57,16 @@ export default function Profile() {
             }
         }
         loadUsers()
-    }, [])
-    console.log(user)
+    
+   
+    const deleteAccount = async()=> {
+        try {
+            await AsyncStorage.removeItem('user_data')
+            alert('Account Successfully removed')
+        } catch (error) {
+            alert(error)
+        }
+    }
     
     if(user != null){
         return (
@@ -79,7 +86,7 @@ export default function Profile() {
                    <Text style={styles.details}>{user?.userAddress}</Text> 
                 </View>
 
-                <Pressable style={styles.box}>
+                <Pressable style={styles.box} onPress={deleteAccount}>
                     <Ionicons name="trash"  style={styles.icon}/>
                    <Text style={styles.deleteAccount}>Delete Account</Text> 
                 </Pressable>
