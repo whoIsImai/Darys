@@ -59,7 +59,7 @@ export default function register({ onRegister }: { onRegister: () => void }){
                 return
             } 
             if(number.length <= 9 || number.length > 10){
-                alert("Enter a valid number")
+                alert("Enter a valid number with no whitespace")
                 return
             }
 
