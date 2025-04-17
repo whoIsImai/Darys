@@ -1,47 +1,75 @@
-import {View, Text} from 'react-native'
+import {View, Text, StyleSheet} from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useState, useEffect } from 'react'
 import Register from '@/components/register'
 
 interface User {
-    name: string
-     number: string
-     address: string
+    userName: string,
+    userNumber: string,
+    userAddress: string
 }
 
-export default function Profile() {
-    const [user, setUser] = useState<User[]>([])
+const styles = StyleSheet.create({
+    container: { 
+        padding: 20, 
+        alignContent: "center",
+        alignSelf: "center",
+        marginTop: 100
+    },
+    name: {
 
+    },
+    number: {
+
+    },
+    address: {
+
+    },
+    deleteAccount: {
+
+    }
+})
+
+export default function Profile() {
+    const [user, setUser] = useState<User>()
+  
     useEffect(() => {
         const loadUsers = async () => {
             try {
                 const jsonData = await AsyncStorage.getItem('user_data')
-                setUser(jsonData != null ? JSON.parse(jsonData) : null)
+                if (jsonData) {
+                    setUser(JSON.parse(jsonData))
+                }
             } catch (error) {
                 alert(error)
             }
         }
         loadUsers()
     }, [])
-
+    console.log(user)
+    
     if(user != null){
         return (
-            <View>
-                {user.map((user, index) => (
-                    <View key={index}>
-                        <Text>{user.name}</Text>
-                        <Text>{user.number}</Text>
-                        <Text>{user.address}</Text>
-                    </View>
-                ))}
+            <View style={styles.container}>
+                <Text>
+                    {user?.userName}
+                </Text>
+                
+                <Text>
+                    {user?.userNumber}
+                </Text>
+
+                <Text>
+                    {user?.userAddress}
+                </Text>
             </View>
         )
+    } else{
+
+        return(
+          <View>
+          <Register />
+          </View>
+        )
     }
-    
-      return(
-        <View>
-        <Register />
-        </View>
-      )
-    
 }
