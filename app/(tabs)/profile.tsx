@@ -45,7 +45,9 @@ const styles = StyleSheet.create({
 
 export default function Profile() {
     const [user, setUser] = useState<User>()
-  
+    const [refresh, setRefresh] = useState(false)
+
+    useEffect(() => {
         const loadUsers = async () => {
             try {
                 const jsonData = await AsyncStorage.getItem('user_data')
@@ -57,11 +59,12 @@ export default function Profile() {
             }
         }
         loadUsers()
-    
+    }, [refresh]) 
    
     const deleteAccount = async()=> {
         try {
             await AsyncStorage.removeItem('user_data')
+            setRefresh(prev => !prev)
             alert('Account Successfully removed')
         } catch (error) {
             alert(error)
@@ -96,7 +99,7 @@ export default function Profile() {
 
         return(
           <View>
-          <Register />
+          <Register onRegister={() => setRefresh(prev => !prev)} />
           </View>
         )
     }

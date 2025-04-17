@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     }
 })
 
-export default function register(){
+export default function register({ onRegister }: { onRegister: () => void }){
 
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
@@ -64,6 +64,7 @@ export default function register(){
             }
 
             await AsyncStorage.setItem('user_data', JSON.stringify(user))
+            onRegister()
             alert('Information successfully saved')
         } catch (error) {
             alert(error)
