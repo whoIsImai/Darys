@@ -1,7 +1,42 @@
-import {View, Text, StyleSheet, Pressable, ScrollView, TextInput} from 'react-native'
+import {View, Text, StyleSheet, Pressable, TextInput} from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useState } from 'react'
 import { Ionicons } from '@expo/vector-icons'
+
+const styles = StyleSheet.create({
+    container: { 
+        padding: 20, 
+        alignContent: "center",
+        alignSelf: "center",
+        marginTop: 100
+    },
+    input: {
+      borderWidth: 1,
+      borderColor: '#ccc',
+      padding: 10,
+      marginBottom: 10,
+      borderRadius: 6,
+    },
+    button: { 
+        marginTop: 20, 
+        fontWeight: 'bold', 
+        backgroundColor: "orange",
+        flexDirection: 'row', 
+        alignItems: "center", 
+        alignContent: "center",
+         alignSelf: "center",
+        padding: 15,
+         borderRadius: 50 
+    },
+    icon: {
+        padding: 5,
+        fontSize: 18
+    },
+    registerText: {
+        padding: 5, 
+        fontSize: 18
+    }
+})
 
 export default function register(){
 
@@ -36,14 +71,16 @@ export default function register(){
     }
 
     return(
-        <View>
+        <View style={styles.container}>
             <TextInput
+                style={styles.input}
                 value={name}
                 onChangeText={setName}
-                placeholder='Enter your fullname. This will be used for placing order.'
+                placeholder='Enter your fullname for placing order.'
             />
 
             <TextInput 
+                 style={styles.input}
                 value={password}
                 onChangeText={setPassword}
                 placeholder='Password'
@@ -51,6 +88,7 @@ export default function register(){
 
 
             <TextInput 
+                 style={styles.input}
                 value={number}
                 onChangeText={setNumber}
                 placeholder='Cell Number'
@@ -58,14 +96,15 @@ export default function register(){
 
 
             <TextInput 
+                 style={styles.input}
                 value={address}
                 onChangeText={setAddress}
                 placeholder='Your address'
             />
 
-            <Pressable onPress={savedetails}>
-                <Ionicons name="save" />
-                <Text>Register</Text>
+            <Pressable onPress={savedetails} style={styles.button}>
+                <Ionicons name="save" style={styles.icon} />
+                <Text style={styles.registerText}>Register</Text>
             </Pressable>
         </View>
     )

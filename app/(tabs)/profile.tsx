@@ -16,7 +16,7 @@ export default function Profile() {
         const loadUsers = async () => {
             try {
                 const jsonData = await AsyncStorage.getItem('user_data')
-                setUser(jsonData != null ? JSON.parse(jsonData) : [])
+                setUser(jsonData != null ? JSON.parse(jsonData) : null)
             } catch (error) {
                 alert(error)
             }
@@ -36,9 +36,12 @@ export default function Profile() {
                 ))}
             </View>
         )
-    }else{
-      return(
-        <Register />
-      )
     }
+    
+      return(
+        <View>
+        <Register />
+        </View>
+      )
+    
 }
