@@ -61,9 +61,11 @@ export default function Profile() {
         loadUsers()
     }, [refresh]) 
    
+
     const deleteAccount = async()=> {
         try {
             await AsyncStorage.removeItem('user_data')
+            setUser(undefined)
             setRefresh(prev => !prev)
             alert('Account Successfully removed')
         } catch (error) {
