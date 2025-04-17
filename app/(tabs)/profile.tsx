@@ -1,7 +1,8 @@
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text, StyleSheet, Pressable} from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useState, useEffect } from 'react'
 import Register from '@/components/register'
+import { Ionicons } from '@expo/vector-icons'
 
 interface User {
     userName: string,
@@ -16,18 +17,30 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         marginTop: 100
     },
-    name: {
-
+    details: {
+        padding: 10,
+        fontWeight: "bold",
+        fontSize: 20
     },
-    number: {
-
-    },
-    address: {
-
+    box: {
+        borderWidth: 1,
+        borderColor: '#ccc',
+        marginBottom: 10,
+        borderRadius: 6,
+        flexDirection: 'row', 
+        alignItems: "center", 
+        alignContent: "center", 
+        alignSelf: "center"
     },
     deleteAccount: {
-
-    }
+        padding: 5,
+        fontWeight: "bold",
+        fontSize: 20
+    },
+    icon: {
+        padding: 5,
+        fontSize: 18
+    },
 })
 
 export default function Profile() {
@@ -51,17 +64,25 @@ export default function Profile() {
     if(user != null){
         return (
             <View style={styles.container}>
-                <Text>
-                    {user?.userName}
-                </Text>
+                <View style={styles.box}>
+                    <Ionicons name="person" style={styles.icon}/>
+                   <Text style={styles.details}>{user?.userName}</Text> 
+                </View>
                 
-                <Text>
-                    {user?.userNumber}
-                </Text>
+                <View style={styles.box}>
+                    <Ionicons name="phone-portrait" style={styles.icon} />
+                    <Text style={styles.details}> (+27) {user?.userNumber}</Text>
+                </View>
 
-                <Text>
-                    {user?.userAddress}
-                </Text>
+                <View style={styles.box}>
+                    <Ionicons name="home" style={styles.icon} />
+                   <Text style={styles.details}>{user?.userAddress}</Text> 
+                </View>
+
+                <Pressable style={styles.box}>
+                    <Ionicons name="trash"  style={styles.icon}/>
+                   <Text style={styles.deleteAccount}>Delete Account</Text> 
+                </Pressable>
             </View>
         )
     } else{
