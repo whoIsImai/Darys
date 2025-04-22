@@ -103,9 +103,6 @@ export default function order({navigation} : any) {
         <Pressable 
         style={{ flexDirection: 'row', alignItems: "center", alignContent: "center", 
         alignSelf: "center", backgroundColor: "orange", padding: 17, borderRadius: 50}}
-        onPress={() => {
-          navigation.navigate("/(tabs)/checkout")
-        }}
         >
           <Ionicons name="cash" style={{color: "white", padding: 5, fontSize: 18}} />
           <Text style={{color: "white", padding: 5, fontSize: 18}}>Checkout</Text>
