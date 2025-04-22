@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, Pressable, TextInput} from 'react-native'
+import {View, Text, StyleSheet, Pressable, TextInput, Alert} from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useState } from 'react'
 import { Ionicons } from '@expo/vector-icons'
@@ -55,17 +55,17 @@ export default function register({ onRegister }: { onRegister: () => void }){
     const savedetails = async()=> {
         try {
             if(name.length < 5){
-                alert('Enter fullname')
+                Alert.alert('Error on name','Enter fullname')
                 return
             } 
             if(number.length <= 9 || number.length > 10){
-                alert("Enter a valid number with no whitespace")
+                Alert.alert('Error on password',"Enter a valid number with no whitespace")
                 return
             }
 
             await AsyncStorage.setItem('user_data', JSON.stringify(user))
             onRegister()
-            alert('Information successfully saved')
+            Alert.alert('Saved','Information successfully saved')
         } catch (error) {
             alert(error)
         }
