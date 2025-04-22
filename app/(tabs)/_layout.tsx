@@ -1,10 +1,8 @@
 import { Tabs } from "expo-router";
 import {Ionicons} from '@expo/vector-icons'
-import { Stack } from "expo-router"
 
 export default function TabsLayout() {
   return(
-    <>
     <Tabs>
       <Tabs.Screen name="index" 
       options={{
@@ -52,10 +50,7 @@ export default function TabsLayout() {
           tabBarInactiveTintColor: "gray",
         }} 
         />
+
     </Tabs>
-    <Stack.Screen name="/app/(tabs)/checkout.tsx" 
-      />
-   
-    </>
   )
 }
