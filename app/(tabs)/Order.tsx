@@ -57,7 +57,7 @@ type cartItem = {
   quantity: number
 }
 
-export default function order({navigation} : any) {
+export default function order() {
   
   const cart = useCart(state => state.cart)
   const decrementQuantity = useCart(state => state.decrementQuantity)
