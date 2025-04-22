@@ -38,6 +38,19 @@ export default function TabsLayout() {
           tabBarInactiveTintColor: "gray",
         }} />
 
+      <Tabs.Screen name="checkout"
+        options={{
+          href: null,
+          title: "Checkout",
+          tabBarLabel: "Checkout",
+          tabBarIcon: ({color}) => (
+            <Ionicons name="checkmark-circle" size={24} color={color} />
+          ),
+          tabBarActiveTintColor: "orange",
+          tabBarInactiveTintColor: "gray",
+        }} 
+        />
+
     </Tabs>
   )
 }
