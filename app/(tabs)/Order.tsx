@@ -5,6 +5,7 @@ import { ImageMap } from '@/utils/imageMap'
 import { Ionicons } from '@expo/vector-icons'
 
 
+
 const styles = StyleSheet.create({
   card: {
     width: "50%",
@@ -56,7 +57,7 @@ type cartItem = {
   quantity: number
 }
 
-export default function order(){
+export default function order({navigation} : any) {
   
   const cart = useCart(state => state.cart)
   const decrementQuantity = useCart(state => state.decrementQuantity)
@@ -99,7 +100,13 @@ export default function order(){
         })}
        
         <Text style={{ alignItems: "center", alignContent: "center", alignSelf: "center", fontSize:18, marginBottom: 20, fontWeight: "500"}}> Total - R{total}.00</Text>
-        <Pressable style={{ flexDirection: 'row', alignItems: "center", alignContent: "center", alignSelf: "center", backgroundColor: "orange", padding: 17, borderRadius: 50}}>
+        <Pressable 
+        style={{ flexDirection: 'row', alignItems: "center", alignContent: "center", 
+        alignSelf: "center", backgroundColor: "orange", padding: 17, borderRadius: 50}}
+        onPress={() => {
+          navigation.navigate("/(tabs)/checkout")
+        }}
+        >
           <Ionicons name="cash" style={{color: "white", padding: 5, fontSize: 18}} />
           <Text style={{color: "white", padding: 5, fontSize: 18}}>Checkout</Text>
         </Pressable>
