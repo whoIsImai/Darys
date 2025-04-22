@@ -10,7 +10,7 @@ export default function TabsLayout() {
         headerTitleAlign: "center",
         headerTintColor: "white",
         headerStyle: {
-          backgroundColor: "#4a90e2",
+          backgroundColor: "orange",
         },
         tabBarLabel: "Meals",
         tabBarIcon: ({ color }) => (
@@ -23,11 +23,11 @@ export default function TabsLayout() {
 
       <Tabs.Screen name="order"
       options={{
-        title: "Your Orders",
+        title: "My Orders",
         headerTitleAlign: "center",
         headerTintColor: "white",
         headerStyle: {
-          backgroundColor: "#4a90e2",
+          backgroundColor: "orange",
         },
         tabBarLabel: "Orders",
         tabBarIcon: ({color}) => (
@@ -43,7 +43,7 @@ export default function TabsLayout() {
           headerTitleAlign: "center",
           headerTintColor: "white",
           headerStyle: {
-            backgroundColor: "#4a90e2",
+            backgroundColor: "orange",
           },
           tabBarLabel: "Profile",
           tabBarIcon: ({color}) => (

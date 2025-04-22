@@ -15,7 +15,7 @@ export default function RootLayout() {
           headerTitleAlign: "center",
           headerTintColor: "white",
           headerStyle: {
-            backgroundColor: "#4a90e2",
+            backgroundColor: "orange",
           },
           headerTitleStyle: {
             fontSize: 20,

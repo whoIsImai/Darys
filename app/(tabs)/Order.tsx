@@ -9,23 +9,14 @@ import { Link, Stack } from "expo-router"
 const styles = StyleSheet.create({
   card: {
     width: "50%",
-    // backgroundColor: '#ffffff',
     borderRadius: 10,
     padding: 5,
-    margin: 1,
     marginLeft: 10,
-    alignSelf: 'flex-start',
+    alignSelf: 'stretch',
     flexDirection: 'row',
     alignItems: 'center',
     shadowColor: '#000',
-    // shadowOffset: {
-    //   width: 0,
-    //   height: 4,
-    // },
-    // shadowOpacity: 0.1,
-    // shadowRadius: 6,
-    // elevation: 5, // for Android shadow
-    // marginTop: 10
+    
   },
   image: {
     width: 120, 
@@ -43,8 +34,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
     marginLeft: 7,
     position: "relative",
-    top: -105,
-    left: 138,
+    top: -30,
+    left: -50,
     marginTop: 15
   }
 })
@@ -69,7 +60,7 @@ export default function order() {
       <ScrollView>
         {cart.map((item : cartItem) => {
           return (
-          <View>
+          <View key={item.id} style={{alignItems: "center", justifyContent: "space-between", flexDirection: "row", padding: 10, }}>
             <View style={styles.card} key={item.id}>
               <Image
                 source={ImageMap[item.img] || ImageMap["noImage.png"]}
@@ -82,7 +73,7 @@ export default function order() {
             
               <Text style={styles.price}>R{item.price * item.quantity}.00</Text>
                 
-              <View style={{ flexDirection: 'row', alignItems: "center", position: "relative", top:-100, left: 140 }}>
+              <View style={{ flexDirection: 'row', alignItems: "center", position: "relative", top:15, left: -115 }}>
               <Pressable onPress={()=> {
                 decrementQuantity(item.id)
               }}>
@@ -112,8 +103,17 @@ export default function order() {
       </ScrollView>
     )
   }else{ return(
-    <View>
-      <Text>Your cart is empty go buy some stuff</Text>
+    <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
+      <Ionicons name="cart"
+        style={{
+          fontSize: 90
+        }}
+      />
+      <Text
+        style={{
+          fontSize: 30
+        }}
+      >Your cart is empty!</Text>
     </View>
   )
   }

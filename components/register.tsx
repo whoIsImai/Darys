@@ -117,7 +117,7 @@ export default function register({ onRegister }: { onRegister: () => void }){
 
             <Pressable onPress={savedetails} style={styles.button}>
                 <Ionicons name="save" style={styles.icon} />
-                <Text style={styles.registerText}>Register</Text>
+                <Text style={styles.registerText}>Login</Text>
             </Pressable>
         </View>
     )
