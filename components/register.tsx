@@ -10,12 +10,32 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         marginTop: 100
     },
-    input: {
-      borderWidth: 1,
-      borderColor: '#ccc',
-      padding: 10,
-      marginBottom: 10,
-      borderRadius: 6,
+    inputNumber: {
+        borderWidth: 2,
+        borderColor: 'orange',
+        padding: 10,
+        marginBottom: 10,
+        borderRadius: 6,
+        color: 'black',
+        fontSize: 16,
+      },
+    inputName: {
+        borderWidth: 2,
+        borderColor: 'orange',
+        padding: 10,
+        marginBottom: 10,
+        borderRadius: 6,
+        color: 'black',
+        fontSize: 16,
+    },
+    inputAddress: {
+        borderWidth: 2,
+        borderColor: 'orange',
+        padding: 10,
+        marginBottom: 10,
+        borderRadius: 6,
+        color: 'black',
+        fontSize: 16,
     },
     button: { 
         marginTop: 20, 
@@ -72,25 +92,25 @@ export default function register({ onRegister }: { onRegister: () => void }){
     return(
         <View style={styles.container}>
             <TextInput
-                style={styles.input}
+                style={styles.inputName}
                 value={name}
                 onChangeText={setName}
-                placeholder='Enter your fullname for placing order.'
+                placeholder='Fullname For Placing Order.'
             />
 
             <TextInput 
-                 style={styles.input}
+                 style={styles.inputNumber}
                 value={number}
                 onChangeText={setNumber}
-                placeholder='Cell Number'
+                placeholder='Cell Phone Number'
             />
 
 
             <TextInput 
-                 style={styles.input}
+                 style={styles.inputAddress}
                 value={address}
                 onChangeText={setAddress}
-                placeholder='Your address'
+                placeholder='Physical Adress Incase Of Delivery'
             />
 
             <Pressable onPress={savedetails} style={styles.button}>
