@@ -64,8 +64,8 @@ export default function Profile() {
     const deleteAccount = async()=> {
         try {
             Alert.alert('Delete Account','Are you sure you want to delete your account?', [
-                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
-                {text: 'OK', onPress: async() => {
+                {text: 'Cancel', style: 'cancel'},
+                {text: 'DELETE', onPress: async() => {
                     await AsyncStorage.removeItem('user_data')
                     setUser(undefined)
                     Alert.alert('Account Removed','Account Successfully removed')
