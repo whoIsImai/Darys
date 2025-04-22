@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, Pressable} from 'react-native'
+import {View, Text, StyleSheet, Pressable, Alert} from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useState, useEffect } from 'react'
 import Register from '@/components/register'
@@ -67,7 +67,7 @@ export default function Profile() {
             await AsyncStorage.removeItem('user_data')
             setUser(undefined)
             setRefresh(prev => !prev)
-            alert('Account Successfully removed')
+           Alert.alert('Account Removed','Account Successfully removed')
         } catch (error) {
             alert(error)
         }
