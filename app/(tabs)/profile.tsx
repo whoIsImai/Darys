@@ -61,13 +61,21 @@ export default function Profile() {
         loadUsers()
     }, [refresh]) 
    
-
     const deleteAccount = async()=> {
         try {
-            await AsyncStorage.removeItem('user_data')
-            setUser(undefined)
-            setRefresh(prev => !prev)
-           Alert.alert('Account Removed','Account Successfully removed')
+            if(user == undefined){
+                Alert.alert('Error','No account to delete')
+                return
+            }
+            Alert.alert('Delete Account','Are you sure you want to delete your account?', [
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: async() => {
+                    await AsyncStorage.removeItem('user_data')
+                    setUser(undefined)
+                    Alert.alert('Account Removed','Account Successfully removed')
+                    setRefresh(prev => !prev)
+                }}
+            ])
         } catch (error) {
             alert(error)
         }
