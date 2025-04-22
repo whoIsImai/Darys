@@ -50,11 +50,13 @@ const styles = StyleSheet.create({
     },
     icon: {
         padding: 5,
-        fontSize: 18
+        fontSize: 18,
+        color: "white"
     },
     registerText: {
         padding: 5, 
-        fontSize: 18
+        fontSize: 18,
+        color: "white"
     }
 })
 
