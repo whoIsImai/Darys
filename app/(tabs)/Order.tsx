@@ -3,7 +3,7 @@ import { useCart } from '@/logic/useCart'
 import {Image} from 'expo-image'
 import { ImageMap } from '@/utils/imageMap'
 import { Ionicons } from '@expo/vector-icons'
-import { Stack } from "expo-router"
+import { Link, Stack } from "expo-router"
 
 
 const styles = StyleSheet.create({
@@ -103,12 +103,11 @@ export default function order() {
         <Pressable 
         style={{ flexDirection: 'row', alignItems: "center", alignContent: "center", 
         alignSelf: "center", backgroundColor: "orange", padding: 17, borderRadius: 50}}
-          onPress={() => {
-            <Stack.Screen name="checkout" options={{ headerShown: false }} />
-          }}
         >
+        <Link href="/checkout">
           <Ionicons name="cash" style={{color: "white", padding: 5, fontSize: 18}} />
           <Text style={{color: "white", padding: 5, fontSize: 18}}>Checkout</Text>
+        </Link>
         </Pressable>
       </ScrollView>
     )
