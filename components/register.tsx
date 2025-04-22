@@ -41,13 +41,11 @@ const styles = StyleSheet.create({
 export default function register({ onRegister }: { onRegister: () => void }){
 
     const [name, setName] = useState('')
-    const [password, setPassword] = useState('')
     const [number, setNumber] = useState('')
     const [address, setAddress] = useState('')
 
     const user = {
         userName: name,
-        userPassword: password,
         userNumber: number,
         userAddress: address
     }
@@ -79,14 +77,6 @@ export default function register({ onRegister }: { onRegister: () => void }){
                 onChangeText={setName}
                 placeholder='Enter your fullname for placing order.'
             />
-
-            <TextInput 
-                 style={styles.input}
-                value={password}
-                onChangeText={setPassword}
-                placeholder='Password'
-            />
-
 
             <TextInput 
                  style={styles.input}
