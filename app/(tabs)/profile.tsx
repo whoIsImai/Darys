@@ -63,10 +63,6 @@ export default function Profile() {
    
     const deleteAccount = async()=> {
         try {
-            if(user == undefined){
-                Alert.alert('Error','No account to delete')
-                return
-            }
             Alert.alert('Delete Account','Are you sure you want to delete your account?', [
                 {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
                 {text: 'OK', onPress: async() => {
