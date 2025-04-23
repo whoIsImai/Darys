@@ -6,7 +6,7 @@ export default function TabsLayout() {
     <Tabs>
       <Tabs.Screen name="index" 
       options={{
-        title: "Meals",
+        title: "Our Menu",
         headerTitleAlign: "center",
         headerTintColor: "white",
         headerStyle: {
