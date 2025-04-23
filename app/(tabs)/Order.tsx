@@ -3,7 +3,7 @@ import { useCart } from '@/logic/useCart'
 import {Image} from 'expo-image'
 import { ImageMap } from '@/utils/imageMap'
 import { Ionicons } from '@expo/vector-icons'
-import { Link, Stack } from "expo-router"
+import { Link } from "expo-router"
 
 
 const styles = StyleSheet.create({
