@@ -1,9 +1,11 @@
 import Kotas from '../assets/Kotas.json'
-import { View, Text, StyleSheet, Pressable, SafeAreaView, FlatList} from 'react-native'
+import { View, Text, StyleSheet, Pressable, SafeAreaView, FlatList, Alert} from 'react-native'
 import {Ionicons} from '@expo/vector-icons'
 import {Image} from 'expo-image'
 import { useCart  } from '@/logic/useCart'
 import { ImageMap } from '@/utils/imageMap'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { useEffect } from 'react'
 
 const styles = StyleSheet.create({
     container: {
@@ -83,6 +85,7 @@ type KotaItem = {
 
 export default function KotaMenu() {
          const addToCart = useCart(state => state.addToCart)
+
     const renderItem = ({ item }: { item: KotaItem }) => (
 
             <View style={styles.card}>
@@ -91,10 +94,20 @@ export default function KotaMenu() {
                 <Text style={styles.text}>{item.name}</Text>
                 <Text style={styles.desc}>{item.description}</Text>
                 <Text style={styles.price}>R{item.price}.00</Text>
-                <Pressable style={styles.button} onPress={ () => {
-                    console.log(item.name)
-                    addToCart(item)
-                    }}>
+                <Pressable style={styles.button} onPress={ async() => {
+                
+                try {
+                    const jsonData = await AsyncStorage.getItem('user_data')
+                    if (jsonData) {
+                        addToCart(item)
+                    }else{
+                       Alert.alert("Login","Please login to add items to cart")
+                    }
+                } catch (error) {
+                    alert(error)
+                }
+           
+            }}>
                     <Ionicons name="add" size={24} color="white" />
                 </Pressable>
             </View>

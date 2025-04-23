@@ -1,9 +1,10 @@
 import Singles from '../assets/Singles.json'
-import { View, Text, StyleSheet, Pressable, SafeAreaView, FlatList} from 'react-native'
+import { View, Text, StyleSheet, Pressable, SafeAreaView, FlatList, Alert} from 'react-native'
 import {Ionicons} from '@expo/vector-icons'
 import {Image} from 'expo-image'
 import { ImageMap } from '@/utils/imageMap'
 import { useCart } from '@/logic/useCart'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const styles = StyleSheet.create({
     container: {
@@ -92,10 +93,20 @@ export default function SingleMenu(){
             <Text style={styles.text}>{item.name}</Text>
             <Text style={styles.desc}>{item.description}</Text>
             <Text style={styles.price}>R.{item.price}.00</Text>
-            <Pressable style={styles.button} onPress={ () => {
-                    console.log(item.name)
-                    addToCart(item)
-                    }}>
+            <Pressable style={styles.button} onPress={ async() => {
+                
+                try {
+                    const jsonData = await AsyncStorage.getItem('user_data')
+                    if (jsonData) {
+                        addToCart(item)
+                    }else{
+                       Alert.alert("Login","Please login to add items to cart")
+                    }
+                } catch (error) {
+                    alert(error)
+                }
+           
+            }}>
                 <Ionicons name="add" size={24} color="white" />
             </Pressable>
         </View>
