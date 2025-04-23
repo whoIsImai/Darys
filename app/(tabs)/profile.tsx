@@ -67,6 +67,7 @@ export default function Profile() {
                 {text: 'Cancel', style: 'cancel'},
                 {text: 'DELETE', onPress: async() => {
                     await AsyncStorage.removeItem('user_data')
+                    await AsyncStorage.removeItem('cart-storage')
                     setUser(undefined)
                     Alert.alert('Account Removed','Account Successfully removed')
                     setRefresh(prev => !prev)
