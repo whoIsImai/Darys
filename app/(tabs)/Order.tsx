@@ -19,22 +19,22 @@ const styles = StyleSheet.create({
     
   },
   image: {
-    width: 120, 
-    height: 120, 
+    width: 100, 
+    height: 100, 
     borderRadius: 7
   },
   title: {
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: "500",
     marginLeft: 7,
-    marginTop: -80,
+    marginTop: -60,
     marginBottom: 10
   },
   price: {
     fontSize: 15,
     marginLeft: 7,
     position: "relative",
-    top: -30,
+    top: -20,
     left: -50,
     marginTop: 15
   }
@@ -58,9 +58,28 @@ export default function order() {
   if(cart.length !== 0){
     return (
       <ScrollView>
+        <Text style={{
+          position: "relative",
+          left: 20,
+          marginRight: 50,
+          fontSize: 17, 
+          marginTop: 20, 
+          fontWeight: "500",
+          marginBottom: 15,
+        }}>
+          Order List:
+        </Text>
         {cart.map((item : cartItem) => {
           return (
-          <View key={item.id} style={{alignItems: "center", justifyContent: "space-between", flexDirection: "row", padding: 10, }}>
+          <View key={item.id} style={{alignItems: "center", 
+            justifyContent: "space-between", 
+            flexDirection: "row", 
+            padding: 5,   
+            borderWidth: 1,
+            borderColor: '#ccc',
+            marginTop: 10,
+          
+            borderRadius: 6, }}>
             <View style={styles.card} key={item.id}>
               <Image
                 source={ImageMap[item.img] || ImageMap["noImage.png"]}
@@ -73,7 +92,7 @@ export default function order() {
             
               <Text style={styles.price}>R{item.price * item.quantity}.00</Text>
                 
-              <View style={{ flexDirection: 'row', alignItems: "center", position: "relative", top:15, left: -115 }}>
+              <View style={{ flexDirection: 'row', alignItems: "center", position: "relative", top:20, left: -115 }}>
               <Pressable onPress={()=> {
                 decrementQuantity(item.id)
               }}>
@@ -90,7 +109,28 @@ export default function order() {
           )
         })}
        
-        <Text style={{ alignItems: "center", alignContent: "center", alignSelf: "center", fontSize:18, marginBottom: 20, fontWeight: "500"}}> Total - R{total}.00</Text>
+        <Text style={{ 
+         position: "relative",
+         left: 20,
+          marginRight: 50,
+          fontSize: 17, 
+          marginTop: 30, 
+          fontWeight: "500",
+          marginBottom: 20, 
+          textDecorationLine: "underline",
+          textDecorationStyle: "solid", 
+         }}>
+          Order Summary
+        </Text>
+
+        <Text style={{
+          position: "relative",
+          left: 20,
+          fontSize:15, 
+          marginBottom: 20, 
+          fontWeight: "500"
+          }}> Total - R{total}.00
+        </Text>
         <Pressable 
         style={{ flexDirection: 'row', alignItems: "center", alignContent: "center", 
         alignSelf: "center", backgroundColor: "orange", padding: 17, borderRadius: 50}}
