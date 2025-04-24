@@ -48,7 +48,7 @@ export default function MenuBox() {
 
   return (
     <ScrollView nestedScrollEnabled>
-      <View>
+      <View style={{ flex: 1, paddingTop: 20 }}>
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginBottom: 50, marginLeft: 30 }}>
             {menuBox.map((btn) => (
               <Pressable key={btn.name} onPress={() => setSelected(btn.name)} 
