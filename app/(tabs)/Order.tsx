@@ -49,7 +49,6 @@ type cartItem = {
 }
 
 export default function order() {
-  
   const cart = useCart(state => state.cart)
   const decrementQuantity = useCart(state => state.decrementQuantity)
   const increaseQuantity = useCart(state => state.increaseQuantity)
