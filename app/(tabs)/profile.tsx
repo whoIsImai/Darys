@@ -91,7 +91,7 @@ export default function Profile() {
                 
                 <View style={styles.box}>
                     <Ionicons name="phone-portrait" style={styles.icon} />
-                    <Text style={styles.details}> (+27) {user?.userNumber}</Text>
+                    <Text style={styles.details}>{user?.userNumber}</Text>
                 </View>
 
                 <View style={styles.box}>
