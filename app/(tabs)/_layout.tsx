@@ -15,10 +15,14 @@ export default function TabsLayout() {
         headerTitleAlign: "left",
         headerTitleContainerStyle: {
           paddingLeft: 20,
+          marginTop: 10,
+          height: 30,
+          
         },
         headerTintColor: "white",
         headerStyle: {
           backgroundColor: "orange",
+          height: 80,
         },
        
        
@@ -34,11 +38,20 @@ export default function TabsLayout() {
       <Tabs.Screen name="order"
       options={{
         title: "Your Orders",
-        headerTitleAlign: "center",
+        headerTitleAlign: "left",
+        headerTitleContainerStyle: {
+          paddingLeft: 20,
+          marginTop: 10,
+          height: 30,
+          
+        },
         headerTintColor: "white",
         headerStyle: {
           backgroundColor: "orange",
+          height: 80,
         },
+
+
         tabBarLabel: "Orders",
         tabBarIcon: ({color}) => (
           <Ionicons name="cart" size={24} color={color} />
@@ -60,11 +73,20 @@ export default function TabsLayout() {
       <Tabs.Screen name="profile"
         options={{
           title: "Profile",
-          headerTitleAlign: "center",
+          headerTitleAlign: "left",
+          headerTitleContainerStyle: {
+            paddingLeft: 20,
+            marginTop: 10,
+          height: 30,
+            
+          },
           headerTintColor: "white",
           headerStyle: {
             backgroundColor: "orange",
+            height: 80,
           },
+
+          
           tabBarLabel: "Profile",
           tabBarIcon: ({color}) => (
             <Ionicons name="person" size={24} color={color} />
