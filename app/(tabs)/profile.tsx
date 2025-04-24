@@ -3,6 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useState, useEffect } from 'react'
 import Register from '@/components/register'
 import { Ionicons } from '@expo/vector-icons'
+import { useCart } from '@/logic/useCart'
 
 interface User {
     userName: string,
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
 export default function Profile() {
     const [user, setUser] = useState<User>()
     const [refresh, setRefresh] = useState(false)
+    const deleteCart = useCart(state => state.deleteCart)
 
     useEffect(() => {
         const loadUsers = async () => {
@@ -68,6 +70,7 @@ export default function Profile() {
                 {text: 'DELETE', onPress: async() => {
                     await AsyncStorage.removeItem('user_data')
                     await AsyncStorage.removeItem('cart-storage')
+                    deleteCart()
                     setUser(undefined)
                     Alert.alert('Account Removed','Account Successfully removed')
                     setRefresh(prev => !prev)

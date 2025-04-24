@@ -18,6 +18,7 @@ type CartState = {
   decrementQuantity: (id: string)=> void
   increaseQuantity: (id: string)=> void
   calculateTotal: () => void
+  deleteCart: () => void
 }
 
 export const useCart = create<CartState>()(
@@ -42,6 +43,11 @@ export const useCart = create<CartState>()(
       removeFromCart: (id) =>{
         set({ cart: get().cart.filter(i => i.id !== id) }),
         get().calculateTotal()},
+
+      deleteCart: () => {
+        set({ cart: [] })
+        set({ total: 0 })
+      },
         
       decrementQuantity: (id) => {
         const updatedCart = get().cart.map(item => {
