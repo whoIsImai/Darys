@@ -17,13 +17,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  header: {
-    fontSize: 29,
-    fontWeight: "bold",
-    marginBottom: 20,
-    textAlign: "center",
-    color: "#333",
-  },
   activeButton: {
     backgroundColor: 'orange',
   },
@@ -56,7 +49,6 @@ export default function MenuBox() {
   return (
     <ScrollView nestedScrollEnabled>
       <View>
-      <Text style={styles.header}>Welcome to Darys</Text>
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginBottom: 50, marginLeft: 30 }}>
             {menuBox.map((btn) => (
               <Pressable key={btn.name} onPress={() => setSelected(btn.name)} 
