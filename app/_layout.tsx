@@ -11,6 +11,7 @@ export default function RootLayout() {
         headerShown: false,
       }}
       />
+
       <Stack.Screen name="payFastScreen"
         options={{
           title: "PayFast",
