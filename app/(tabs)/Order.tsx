@@ -4,6 +4,12 @@ import {Image} from 'expo-image'
 import { ImageMap } from '@/utils/imageMap'
 import { Ionicons } from '@expo/vector-icons'
 import { Link } from "expo-router"
+import { useNavigation, NavigationProp } from '@react-navigation/native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+
+type RootStackParamList = {
+  payFastScreen: { payfastURL: string };
+};
 
 
 const styles = StyleSheet.create({
@@ -49,10 +55,13 @@ type cartItem = {
 }
 
 export default function order() {
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>()
   const cart = useCart(state => state.cart)
   const decrementQuantity = useCart(state => state.decrementQuantity)
   const increaseQuantity = useCart(state => state.increaseQuantity)
   const total = useCart((state) => state.total)
+  
+ 
 
   if(cart.length !== 0){
     return (
@@ -133,11 +142,36 @@ export default function order() {
         <Pressable 
         style={{ flexDirection: 'row', alignItems: "center", alignContent: "center", 
         alignSelf: "center", backgroundColor: "orange", padding: 17, borderRadius: 50}}
+
+        onPress={async() => {
+          const jsonData = await AsyncStorage.getItem('user_data')
+          if (!jsonData) return
+          const user = JSON.parse(jsonData)
+          const response = await fetch('http://localhost:2222/api/pay', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              Clientname : user.userName,
+              amount: total, 
+              item_name_quantity: cart.map((item) => {
+                return `${item.name} x ${item.quantity}`
+              }).join(", "),
+              
+            }),
+          })
+
+          const payfastURL = await response.text()
+          if (response.ok) {
+            navigation.navigate('payFastScreen', { payfastURL })
+          } else {
+            alert('Error: ' + payfastURL)
+          }
+        }}
         >
-        <Link href="/checkout">
+     
           <Ionicons name="cash" style={{color: "white", padding: 5, fontSize: 18}} />
           <Text style={{color: "white", padding: 5, fontSize: 18}}>Checkout</Text>
-        </Link>
+        
         </Pressable>
       </ScrollView>
     )
