@@ -11,26 +11,6 @@ export default function RootLayout() {
         headerShown: false,
       }}
       />
-      <Stack.Screen name="checkout"
-        options={{
-          title: "Checkout",
-          headerShown: true,
-          headerTitleAlign: "center",
-          headerTintColor: "white",
-          headerStyle: {
-            backgroundColor: "orange",
-          },
-          headerTitleStyle: {
-            fontSize: 20,
-            fontWeight: "bold",
-          },
-          headerBackTitle: "Back",
-          headerBackTitleStyle: {
-            fontSize: 16,
-          },
-          headerBackButtonMenuEnabled: true,
-        }}
-      />
       <Stack.Screen name="payFastScreen"
         options={{
           title: "PayFast",
