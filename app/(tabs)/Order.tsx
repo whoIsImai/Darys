@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, Pressable, ScrollView} from 'react-native'
+import {View, Text, StyleSheet, Pressable, ScrollView, Alert} from 'react-native'
 import { useCart } from '@/logic/useCart'
 import {Image} from 'expo-image'
 import { ImageMap } from '@/utils/imageMap'
@@ -144,6 +144,7 @@ export default function order() {
         alignSelf: "center", backgroundColor: "orange", padding: 17, borderRadius: 50}}
 
         onPress={async() => {
+         try {
           const jsonData = await AsyncStorage.getItem('user_data')
           if (!jsonData) return
           const user = JSON.parse(jsonData)
@@ -160,13 +161,18 @@ export default function order() {
             }),
           })
           
-          console.log("pressed")
           const payfastURL = await response.text()
           if (response.ok) {
             navigation.navigate('payFastScreen', { payfastURL })
           } else {
             alert('Error: ' + payfastURL)
           }
+          
+          console.log("pressed")
+         } catch (error) {
+            console.error('Error:', error)
+            Alert.alert('Error', 'An error occurred while processing your request. Please try again later.')
+         }
         }}
         >
      
