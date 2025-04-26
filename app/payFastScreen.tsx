@@ -1,6 +1,6 @@
 import { Alert } from 'react-native';
 import { WebView } from 'react-native-webview'
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 interface RouteParams {
   payfastURL: string;
@@ -8,6 +8,15 @@ interface RouteParams {
 
 export default function PayfastScreen({ route }: { route: { params: RouteParams } }) {
   const { payfastURL } = route.params
+
+  if (!payfastURL) {
+    return(
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text style={{ fontSize: 18 }}>No payment URL provided.</Text>
+      </View>
+    )
+  }
+
 
   return (
     <View style={{ flex: 1 }}>
