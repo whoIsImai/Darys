@@ -157,6 +157,7 @@ export default function order() {
               item_name_quantity: cart.map((item) => {
                 return `${item.name} x ${item.quantity}`
               }).join(", "),
+              item_description: "Your order description here",
               
             }),
           })
@@ -165,6 +166,7 @@ export default function order() {
           if (response.ok) {
             navigation.navigate('payFastScreen', { payfastURL })
           } else {
+            console.log(response.status)
             alert('Error: ' + payfastURL)
           }
           
