@@ -159,14 +159,14 @@ export default function order() {
               
             }),
           })
-
+          
+          console.log("pressed")
           const payfastURL = await response.text()
           if (response.ok) {
             navigation.navigate('payFastScreen', { payfastURL })
           } else {
             alert('Error: ' + payfastURL)
           }
-          console.log("pressed")
         }}
         >
      
