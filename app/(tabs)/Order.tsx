@@ -147,7 +147,7 @@ export default function order() {
           const jsonData = await AsyncStorage.getItem('user_data')
           if (!jsonData) return
           const user = JSON.parse(jsonData)
-          const response = await fetch('http://localhost:2222/api/pay', {
+          const response = await fetch('https://s36n1vrm-2222.inc1.devtunnels.ms/api/pay', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -166,6 +166,7 @@ export default function order() {
           } else {
             alert('Error: ' + payfastURL)
           }
+          console.log("pressed")
         }}
         >
      
