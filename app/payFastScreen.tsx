@@ -1,13 +1,15 @@
 import { Alert } from 'react-native';
 import { WebView } from 'react-native-webview'
 import { View, Text } from 'react-native';
+import { useRoute } from '@react-navigation/native';
 
 interface RouteParams {
   payfastURL: string;
 }
 
-export default function PayfastScreen({ route }: { route: { params: RouteParams } }) {
-  const { payfastURL } = route.params
+export default function PayfastScreen() {
+  const route = useRoute()
+  const { payfastURL } = route.params as RouteParams
 
   if (!payfastURL) {
     return(
@@ -28,8 +30,10 @@ export default function PayfastScreen({ route }: { route: { params: RouteParams 
         } else if (navState.url.includes('https://payment-messages.vercel.app/failed')) {
             Alert.alert('Payment Failed', 'Your payment failed. Please try again.')
         }
+        
       }}
     />
     </View>
   );
 }
+

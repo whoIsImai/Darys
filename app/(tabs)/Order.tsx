@@ -8,6 +8,7 @@ import { useNavigation, NavigationProp } from '@react-navigation/native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 type RootStackParamList = {
+  Home: undefined
   payFastScreen: { payfastURL: string };
 };
 
