@@ -154,15 +154,15 @@ export default function order() {
             body: JSON.stringify({
               Clientname : user.userName,
               amount: total, 
-              item_name_quantity: cart.map((item) => {
-                return `${item.name} x ${item.quantity}`
-              }).join(", "),
+              item_name: cart.map((item) => { return `${item.name} x ${item.quantity}`}).join(", "),
               item_description: "Your order description here",
               
             }),
           })
           
+          console.log(response.statusText)
           const payfastURL = await response.text()
+          console.log(payfastURL)
           if (response.ok) {
             navigation.navigate('payFastScreen', { payfastURL })
           } else {
