@@ -4,6 +4,7 @@ import { View, Text } from 'react-native'
 import { useRoute } from '@react-navigation/native'
 import { useOrderStore } from '@/logic/orderStore'
 import { useCart } from '@/logic/useCart'
+import { useRouter } from 'expo-router'
 
 interface RouteParams {
   payfastURL: string;
@@ -11,8 +12,9 @@ interface RouteParams {
 
 export default function PayfastScreen() {
   const { setLatestOrder } = useOrderStore()
-  const {cart, total} = useCart()
+  const {cart, total, deleteCart} = useCart()
   const route = useRoute()
+  const router = useRouter()
   const { payfastURL } = route.params as RouteParams
 
   if (!payfastURL) {
@@ -38,9 +40,11 @@ export default function PayfastScreen() {
         if (navState.url.includes('https://payment-messages.vercel.app/success')) {
           Alert.alert('Payment Successful', 'Your payment was successful!')
           setLatestOrder(order)
-          
+          deleteCart()
+          router.push('/(tabs)')
         } else if (navState.url.includes('https://payment-messages.vercel.app/failed')) {
             Alert.alert('Payment Failed', 'Your payment failed. Please try again.')
+            router.push('/(tabs)/order')
         }
         
       }}
