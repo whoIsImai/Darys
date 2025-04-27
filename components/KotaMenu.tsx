@@ -5,7 +5,6 @@ import {Image} from 'expo-image'
 import { useCart  } from '@/logic/useCart'
 import { ImageMap } from '@/utils/imageMap'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { useEffect } from 'react'
 
 const styles = StyleSheet.create({
     container: {
