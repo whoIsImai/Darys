@@ -3,9 +3,10 @@ import { useCart } from '@/logic/useCart'
 import {Image} from 'expo-image'
 import { ImageMap } from '@/utils/imageMap'
 import { Ionicons } from '@expo/vector-icons'
-import { Link } from "expo-router"
 import { useNavigation, NavigationProp } from '@react-navigation/native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import Loading from '@/components/loading'
+import {  useState } from 'react'
 
 type RootStackParamList = {
   Home: undefined
@@ -61,12 +62,14 @@ export default function order() {
   const decrementQuantity = useCart(state => state.decrementQuantity)
   const increaseQuantity = useCart(state => state.increaseQuantity)
   const total = useCart((state) => state.total)
+  const [loading, setLoading] = useState(false)
   
  
 
   if(cart.length !== 0){
     return (
       <ScrollView>
+        {loading && <Loading />}
         <Text style={{
           position: "relative",
           left: 20,
@@ -146,6 +149,7 @@ export default function order() {
 
         onPress={async() => {
          try {
+          setLoading(true)
           const jsonData = await AsyncStorage.getItem('user_data')
           if (!jsonData) return
           const user = JSON.parse(jsonData)
@@ -175,6 +179,8 @@ export default function order() {
          } catch (error) {
             console.error('Error:', error)
             Alert.alert('Error', 'An error occurred while processing your request. Please try again later.')
+         } finally {
+          setLoading(false)
          }
         }}
         >
