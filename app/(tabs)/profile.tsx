@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Register from '@/components/register'
 import { Ionicons } from '@expo/vector-icons'
 import { useCart } from '@/logic/useCart'
+import { useOrderStore } from '@/logic/orderStore'
 
 interface User {
     userName: string,
@@ -48,6 +49,7 @@ export default function Profile() {
     const [user, setUser] = useState<User>()
     const [refresh, setRefresh] = useState(false)
     const deleteCart = useCart(state => state.deleteCart)
+    const { deleteOrders } = useOrderStore()
 
     useEffect(() => {
         const loadUsers = async () => {
@@ -71,6 +73,7 @@ export default function Profile() {
                     await AsyncStorage.removeItem('user_data')
                     await AsyncStorage.removeItem('cart-storage')
                     deleteCart()
+                    deleteOrders()
                     setUser(undefined)
                     Alert.alert('Account Removed','Account Successfully removed')
                     setRefresh(prev => !prev)
