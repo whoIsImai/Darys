@@ -19,7 +19,7 @@ export const useOrderStore = create<OrderStore>((set) => ({
       set({ latestOrder: order })
       AsyncStorage.setItem('latest_order', JSON.stringify(order))
         .then(() => {
-          console.log('Order saved to storage ✅')
+          console.log('Order saved to storage')
         })
         .catch((err) => {
           console.error('Failed to save order:', err)
