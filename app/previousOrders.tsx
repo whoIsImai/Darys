@@ -29,7 +29,6 @@ export default function PreviousOrders() {
 
     return (
         <View style={{ flex: 1, padding: 20 }}>
-            <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 20 }}>Previous Orders</Text>
             {orders.length > 0 ? (
                 orders.map((order, index) => (
                     <View key={index} style={{ marginBottom: 10 }}>
