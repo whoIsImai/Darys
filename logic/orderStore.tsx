@@ -6,6 +6,7 @@ type Order ={
     name: string
     img : string
     price: number
+    date: string
 }
 
 type OrderStore = {
