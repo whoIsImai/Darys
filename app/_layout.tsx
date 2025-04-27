@@ -31,6 +31,25 @@ export default function RootLayout() {
           },
         }}
       />
+      <Stack.Screen name="previousOrders"
+        options={{
+          title: "Order Summary",
+          headerTitleAlign: "left",
+          headerShown: true,
+          headerTintColor: "white",
+          headerStyle: {
+            backgroundColor: "orange",
+          },
+          headerTitleStyle: {
+            fontSize: 20,
+            fontWeight: "bold",
+          },
+          headerBackTitle: "Back",
+          headerBackTitleStyle: {
+            fontSize: 16,
+          },
+        }}
+      />
 
     </Stack>
     </>
