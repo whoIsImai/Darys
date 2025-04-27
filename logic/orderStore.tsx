@@ -11,6 +11,7 @@ type Order ={
 type OrderStore = {
   latestOrder: Order | null
   setLatestOrder: (order: Order) => void
+  deleteOrders: () => void
 }
 
 export const useOrderStore = create<OrderStore>((set) => ({
@@ -24,5 +25,9 @@ export const useOrderStore = create<OrderStore>((set) => ({
         .catch((err) => {
           console.error('Failed to save order:', err)
         })
+    },
+    deleteOrders: () => {
+      set({ latestOrder: null })
+      AsyncStorage.removeItem('latest_order')
     },
   }))
