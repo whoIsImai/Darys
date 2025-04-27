@@ -14,9 +14,9 @@ export default function RootLayout() {
 
       <Stack.Screen name="payFastScreen"
         options={{
-          title: "PayFast",
+          title: "Payment Page",
+          headerTitleAlign: "left",
           headerShown: true,
-          headerTitleAlign: "center",
           headerTintColor: "white",
           headerStyle: {
             backgroundColor: "orange",
