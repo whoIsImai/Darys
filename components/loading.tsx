@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
 export default function Loading() {
     return (
         <View style={styles.loaderContainer}>
-            <ActivityIndicator size="large" color="#0000ff" />
+            <ActivityIndicator size="large" color="orange" />
         </View>
     )
 }
