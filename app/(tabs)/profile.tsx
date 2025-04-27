@@ -99,6 +99,13 @@ export default function Profile() {
                    <Text style={styles.details}>{user?.userAddress}</Text> 
                 </View>
 
+                <View style={styles.box}>
+                    <Ionicons name="cart" style={styles.icon} />
+                    <Pressable>
+                        <Text style={styles.details}>Your Orders</Text>
+                    </Pressable>
+                </View>
+
                 <Pressable style={styles.box} onPress={deleteAccount}>
                     <Ionicons name="trash"  style={styles.icon}/>
                    <Text style={styles.deleteAccount}>Delete Account</Text> 
