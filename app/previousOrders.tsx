@@ -27,10 +27,11 @@ export default function PreviousOrders() {
         loadOrders()
     }, []) 
 
-    return (
-        <View style={{ flex: 1, padding: 20 }}>
-            {orders.length > 0 ? (
-                orders.map((order, index) => (
+
+    if(orders.length > 0){ {
+        return (
+            <View style={{ flex: 1, padding: 20 }}>
+                {orders.map((order, index) => (
                     <View key={index} style={{ marginBottom: 10 }}>
                         <Text style={{ fontSize: 18 }}>{order.name}</Text>
                         <Image source={ImageMap[order.img]} style={{
@@ -44,10 +45,15 @@ export default function PreviousOrders() {
                         <Text style={{ fontSize: 16 }}>{order.price}</Text>
                         <Text style={{ fontSize: 14 }}>{order.date}</Text>
                     </View>
-                ))
-            ) : (
-                <Text style={{ fontSize: 18 }}>No previous orders found.</Text>
-            )}
+                ))}
+            </View>
+        )
+    }
+
+} else {
+    return (
+        <View style={{ flex: 1, padding: 20 }}>
+            <Text style={{ fontSize: 18 }}>No previous orders found.</Text>
         </View>
-    )
+    )}
 }
