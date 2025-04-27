@@ -5,6 +5,7 @@ import Register from '@/components/register'
 import { Ionicons } from '@expo/vector-icons'
 import { useCart } from '@/logic/useCart'
 import { useOrderStore } from '@/logic/orderStore'
+import { useRouter } from 'expo-router'
 
 interface User {
     userName: string,
@@ -50,6 +51,7 @@ export default function Profile() {
     const [refresh, setRefresh] = useState(false)
     const deleteCart = useCart(state => state.deleteCart)
     const { deleteOrders } = useOrderStore()
+    const router = useRouter()
 
     useEffect(() => {
         const loadUsers = async () => {
@@ -104,7 +106,9 @@ export default function Profile() {
 
                 <View style={styles.box}>
                     <Ionicons name="cart" style={styles.icon} />
-                    <Pressable>
+                    <Pressable
+                    onPress={() => router.push('/previousOrders')}
+                    >
                         <Text style={styles.details}>Your Orders</Text>
                     </Pressable>
                 </View>
