@@ -28,7 +28,7 @@ export default function PayfastScreen() {
   const order = {
     name: cart.map(item => `${item.name} X ${item.quantity}`).join(', '),
     img: cart.map(item => item.img).join(', '),
-    price: total,
+    price: total.toString(),
     date: new Date().toLocaleDateString()
   }
 
