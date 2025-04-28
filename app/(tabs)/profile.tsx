@@ -74,6 +74,7 @@ export default function Profile() {
                 {text: 'DELETE', onPress: async() => {
                     await AsyncStorage.removeItem('user_data')
                     await AsyncStorage.removeItem('cart-storage')
+                    await AsyncStorage.removeItem('latest_order')
                     deleteCart()
                     deleteOrders()
                     setUser(undefined)
