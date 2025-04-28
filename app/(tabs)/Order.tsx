@@ -159,7 +159,7 @@ export default function order() {
             body: JSON.stringify({
               Clientname : user.userName,
               amount: total, 
-              item_name: cart.map((item) => `${item.name} x ${item.quantity}`).join(", "),
+              item_name: cart.map((item) => `${item.name} x ${item.quantity}`).join(" , "),
               item_description: "Your order description here",
               
             }),
