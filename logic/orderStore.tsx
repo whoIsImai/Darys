@@ -9,19 +9,19 @@ type Order ={
 }
 
 type OrderStore = {
-  latestOrder: Order | null
+  latestOrder: Order[]
   setLatestOrder: (order: Order) => void
   deleteOrders: () => void
 }
 
 export const useOrderStore = create<OrderStore>((set) => ({
-    latestOrder: null,
+    latestOrder: [],
     setLatestOrder: (order) => {
-      set({ latestOrder: order })
+      set((state) => ({ latestOrder: [...state.latestOrder, order] }))
       AsyncStorage.setItem('latest_order', JSON.stringify(order))
     },
     deleteOrders: () => {
-      set({ latestOrder: null })
+      set({ latestOrder: [] })
       AsyncStorage.removeItem('latest_order')
     },
   }))
