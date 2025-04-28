@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { persist, createJSONStorage } from 'zustand/middleware'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 type Order ={
@@ -14,14 +15,20 @@ type OrderStore = {
   deleteOrders: () => void
 }
 
-export const useOrderStore = create<OrderStore>((set) => ({
-    latestOrder: [],
-    setLatestOrder: (order) => {
-      set((state) => ({ latestOrder: [...state.latestOrder, order] }))
-      AsyncStorage.setItem('latest_order', JSON.stringify(order))
-    },
-    deleteOrders: () => {
-      set({ latestOrder: [] })
-      AsyncStorage.removeItem('latest_order')
-    },
-  }))
+export const useOrderStore = create<OrderStore>()(
+  persist(
+    (set, get) => ({
+      latestOrder: [],
+      setLatestOrder: (order) => {
+        set({ latestOrder: [...get().latestOrder, order] })
+      },
+      deleteOrders: () => {
+        set({ latestOrder: [] })
+      },
+    }),
+    {
+      name: 'latest_order', 
+      storage: createJSONStorage(() => AsyncStorage), 
+    })
+)
+  
