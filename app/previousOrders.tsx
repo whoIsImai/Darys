@@ -1,13 +1,10 @@
 import { ScrollView,View, Text } from "react-native"
-import { Image } from "expo-image"
-import { ImageMap } from "@/utils/imageMap"
 import { useOrderStore } from "@/logic/orderStore"
 
 export default function PreviousOrders() {
     type Order = {
         name: string
         price: string
-        img: string
         date: string
     }
   
