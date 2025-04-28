@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 type Order ={
     name: string
     img : string
-    price: number
+    price: string
     date: string
 }
 
