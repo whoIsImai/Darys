@@ -165,9 +165,7 @@ export default function order() {
             }),
           })
           
-          console.log(response.statusText)
           const payfastURL = await response.text()
-          console.log(payfastURL)
           if (response.ok) {
             navigation.navigate('payFastScreen', { payfastURL })
           } else {
