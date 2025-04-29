@@ -170,10 +170,9 @@ export default function order() {
             navigation.navigate('payFastScreen', { payfastURL })
           } else {
             console.log(response.status)
-            alert('Error: ' + payfastURL)
+            alert('An error occurred while processing your request. Please try again later.')
           }
           
-          console.log("pressed")
          } catch (error) {
             console.error('Error:', error)
             Alert.alert('Error', 'An error occurred while processing your request. Please try again later.')
