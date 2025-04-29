@@ -5,7 +5,7 @@ export default function PreviousOrders() {
   
     const { latestOrder } = useOrderStore()
     
-    if(latestOrder.length !== 0 ){ {
+    if(latestOrder.length > 0 ){ {
         return (
             <ScrollView style={{ flex: 1, padding: 20 }}>
                 <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 20 }}>Previous Orders</Text>
