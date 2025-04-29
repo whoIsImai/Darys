@@ -37,12 +37,10 @@ export default function PayfastScreen() {
       source={{ uri: payfastURL }}
       onNavigationStateChange={(navState) => {
         if (navState.url.includes('https://payment-messages.vercel.app/success')) {
-          Alert.alert('Payment Successful', 'Your payment was successful!')
           setLatestOrder(order)
           deleteCart()
           router.push('/(tabs)')
         } else if (navState.url.includes('https://payment-messages.vercel.app/failed')) {
-            Alert.alert('Payment Failed', 'Your payment failed. Please try again.')
             router.push('/(tabs)/order')
         }
         
