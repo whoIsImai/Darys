@@ -10,7 +10,8 @@ interface RouteParams {
 }
 
 export default function PayfastScreen() {
-  const { deleteCart} = useCart()
+  const { setLatestOrder } = useOrderStore()
+  const {cart, total, deleteCart} = useCart()
   const route = useRoute()
   const router = useRouter()
   const { payfastURL } = route.params as RouteParams
@@ -23,7 +24,11 @@ export default function PayfastScreen() {
     )
   }
 
- 
+  const order = {
+    name: cart.map(item => `${item.name} x ${item.quantity}`).join(' , '),
+    price: total.toString(),
+    date: new Date().toLocaleDateString()
+  }
 
   return (
     <View style={{ flex: 1 }}>
@@ -31,6 +36,7 @@ export default function PayfastScreen() {
       source={{ uri: payfastURL }}
       onNavigationStateChange={(navState) => {
         if (navState.url.includes('https://payment-messages.vercel.app/success')) {
+          setLatestOrder(order)
           deleteCart()
           router.push('/(tabs)')
         } else if (navState.url.includes('https://payment-messages.vercel.app/failed')) {

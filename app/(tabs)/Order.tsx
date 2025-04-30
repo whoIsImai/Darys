@@ -7,7 +7,6 @@ import { useNavigation, NavigationProp } from '@react-navigation/native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import Loading from '@/components/loading'
 import {  useState } from 'react'
-import { useOrderStore } from '@/logic/orderStore'
 
 type RootStackParamList = {
   Home: undefined
@@ -64,7 +63,6 @@ export default function order() {
   const increaseQuantity = useCart(state => state.increaseQuantity)
   const total = useCart((state) => state.total)
   const [loading, setLoading] = useState(false)
-  const { setLatestOrder } = useOrderStore()
   
  
 
@@ -173,15 +171,6 @@ export default function order() {
           
           const payfastURL = await response.text()
           if (response.ok) {
-
-            const order = {
-              id: orderID,
-              name: cart.map(item => `${item.name} x ${item.quantity}`).join(' , '),
-              price: total.toString(),
-              date: new Date().toLocaleDateString()
-            }
-            
-            setLatestOrder(order)
             navigation.navigate('payFastScreen', { payfastURL })
           } else {
             console.log(response.status)
