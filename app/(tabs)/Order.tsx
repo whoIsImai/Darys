@@ -153,11 +153,11 @@ export default function order() {
          try {
           setLoading(true)
           const jsonData = await AsyncStorage.getItem('user_data')
-          const timestamp = Date.now()
+         
           const random = Math.floor(Math.random() * 1000000)
           if (!jsonData) return
           const user = JSON.parse(jsonData)
-          const orderID=  `${user.userName}-${timestamp}-${random}`
+          const orderID=  `${user.userName}-${random}`
           setOrderId(orderID)
           await AsyncStorage.setItem('order_id', orderID)
           const response = await fetch('https://s36n1vrm-2222.inc1.devtunnels.ms/api/pay', {
