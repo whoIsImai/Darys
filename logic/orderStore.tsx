@@ -3,7 +3,7 @@ import { persist, createJSONStorage } from 'zustand/middleware'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 type Order ={
-    id: string
+    id: string | null
     name: string
     price: string
     date: string

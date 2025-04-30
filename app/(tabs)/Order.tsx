@@ -1,5 +1,6 @@
 import {View, Text, StyleSheet, Pressable, ScrollView, Alert} from 'react-native'
 import { useCart } from '@/logic/useCart'
+import { useOrderIdStore } from '@/logic/orderID'
 import {Image} from 'expo-image'
 import { ImageMap } from '@/utils/imageMap'
 import { Ionicons } from '@expo/vector-icons'
@@ -59,6 +60,7 @@ type cartItem = {
 export default function order() {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>()
   const cart = useCart(state => state.cart)
+  const {setOrderId} = useOrderIdStore()
   const decrementQuantity = useCart(state => state.decrementQuantity)
   const increaseQuantity = useCart(state => state.increaseQuantity)
   const total = useCart((state) => state.total)
@@ -156,6 +158,8 @@ export default function order() {
           if (!jsonData) return
           const user = JSON.parse(jsonData)
           const orderID=  `${user.userName}-${timestamp}-${random}`
+          setOrderId(orderID)
+          await AsyncStorage.setItem('order_id', orderID)
           const response = await fetch('https://s36n1vrm-2222.inc1.devtunnels.ms/api/pay', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
