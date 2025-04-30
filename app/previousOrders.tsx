@@ -12,7 +12,7 @@ export default function PreviousOrders() {
                 <Text style={{ fontSize: 16, marginBottom: 10 }}>You have {latestOrder.length} previous orders.</Text>
                 {latestOrder.map((order) => {
                     return (
-                    <View key={order.name} style={{ marginBottom: 20, borderWidth: 1, borderColor: '#ccc', padding: 10, borderRadius: 10 }}>
+                    <View key={order.id} style={{ marginBottom: 20, borderWidth: 1, borderColor: '#ccc', padding: 10, borderRadius: 10 }}>
                         <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{order.name}</Text>
                         <Text style={{ fontSize: 16 }}> Total - R{order.price}.00</Text>
                         <Text style={{ fontSize: 14 }}>Ordered on - {order.date}</Text>
