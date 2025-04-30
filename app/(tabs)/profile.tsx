@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Register from '@/components/register'
 import { Ionicons } from '@expo/vector-icons'
 import { useCart } from '@/logic/useCart'
+import { useOrderIdStore } from '@/logic/orderID'
 import { useOrderStore } from '@/logic/orderStore'
 import { useRouter } from 'expo-router'
 
@@ -51,6 +52,7 @@ export default function Profile() {
     const [refresh, setRefresh] = useState(false)
     const deleteCart = useCart(state => state.deleteCart)
     const { deleteOrders } = useOrderStore()
+    const { clearOrderId } = useOrderIdStore()
     const router = useRouter()
 
     useEffect(() => {
@@ -75,8 +77,10 @@ export default function Profile() {
                     await AsyncStorage.removeItem('user_data')
                     await AsyncStorage.removeItem('cart-storage')
                     await AsyncStorage.removeItem('latest_order')
+                    await AsyncStorage.removeItem('order_id')
                     deleteCart()
                     deleteOrders()
+                    clearOrderId()
                     setUser(undefined)
                     Alert.alert('Account Removed','Account Successfully removed')
                     setRefresh(prev => !prev)
