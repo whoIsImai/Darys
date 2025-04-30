@@ -6,7 +6,7 @@ import { useCart } from '@/logic/useCart'
 import { useRouter } from 'expo-router'
 
 interface RouteParams {
-  payfastURL: string;
+  payfastURL: string
 }
 
 export default function PayfastScreen() {
