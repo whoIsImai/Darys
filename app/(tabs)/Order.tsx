@@ -151,8 +151,11 @@ export default function order() {
          try {
           setLoading(true)
           const jsonData = await AsyncStorage.getItem('user_data')
+          const timestamp = Date.now()
+          const random = Math.floor(Math.random() * 1000000)
           if (!jsonData) return
           const user = JSON.parse(jsonData)
+          const orderID=  `${user.userName}-${timestamp}-${random}`
           const response = await fetch('https://s36n1vrm-2222.inc1.devtunnels.ms/api/pay', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -161,6 +164,7 @@ export default function order() {
               amount: total, 
               item_name: cart.map((item) => `${item.name} x ${item.quantity}`).join(" , "),
               item_description: "Your order description here",
+              orderID: orderID
               
             }),
           })
