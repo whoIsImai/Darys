@@ -1,4 +1,3 @@
-import { Alert } from 'react-native';
 import { WebView } from 'react-native-webview'
 import { View, Text } from 'react-native'
 import { useRoute } from '@react-navigation/native'
