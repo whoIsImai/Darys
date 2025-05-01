@@ -167,7 +167,6 @@ export default function order() {
               item_name: cart.map((item) => `${item.name} x ${item.quantity}`).join(" , "),
               item_description: "Your order description here",
               orderID: orderID
-              
             }),
           })
           

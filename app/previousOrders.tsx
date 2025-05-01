@@ -11,7 +11,6 @@ export default function PreviousOrders() {
                 <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 20 }}>Previous Orders</Text>
                 <Text style={{ fontSize: 16, marginBottom: 10 }}>You have {latestOrder.length} previous orders.</Text>
                 {latestOrder.map((order) => {
-                    if(order.id !== null) {
                         return (
                             <View key={order.id} style={{ marginBottom: 20, borderWidth: 1, borderColor: '#ccc', padding: 10, borderRadius: 10 }}>
                                 <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Order ID - {order.id}</Text>
@@ -20,7 +19,6 @@ export default function PreviousOrders() {
                                 <Text style={{ fontSize: 14 }}>Ordered on - {order.date}</Text>
                             </View>
                             )
-                    }
                 })}
                   
             </ScrollView>
