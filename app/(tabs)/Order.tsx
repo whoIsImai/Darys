@@ -158,7 +158,6 @@ export default function order() {
           const user = JSON.parse(jsonData)
           const orderID = `${user.userName}-${random}`
           setOrderId(orderID)
-          await AsyncStorage.setItem('order_id', orderID)
           const response = await fetch('https://s36n1vrm-2222.inc1.devtunnels.ms/api/pay', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
