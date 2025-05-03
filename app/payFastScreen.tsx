@@ -44,9 +44,14 @@ export default function PayfastScreen() {
           }
           deleteCart()
           clearOrderId()
-          router.push('/(tabs)')
+          setTimeout(()=> {
+            router.push('/(tabs)')
+          },3000)
         } else if (navState.url.includes('https://payment-messages.vercel.app/failed')) {
+          setTimeout(() => {
             router.push('/(tabs)/order')
+          },3000)
+           
         }
         
       }}
